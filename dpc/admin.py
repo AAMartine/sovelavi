@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from models import Unite_Mesure, Menaces, Caract_Menaces, Risques
+
+admin.site.register(Unite_Mesure)
+admin.site.register(Menaces)
+admin.site.register(Caract_Menaces)
+admin.site.register(Risques)
