@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from models import Unite_Mesure, Menaces, Caract_Menaces, Risques, Commune
+from .models import Unite_Mesure, Menaces, Caract_Menaces, Risques, Commune
 
 class CommuneAdmin(admin.ModelAdmin):
     list_display = ('commune','departemen',)
