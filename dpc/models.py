@@ -1,4 +1,4 @@
-from django.contrib.gis.db import models
+from django.db import models
 
 class Commune(models.Model):
     id_com = models.IntegerField()
@@ -10,8 +10,8 @@ class Commune(models.Model):
     longitude = models.FloatField()
     shape_le_1 = models.FloatField()
     shape_area = models.FloatField()
-    geom = models.MultiPolygonField()
-    objects = models.GeoManager()
+    #geom = models.MultiPolygonField()
+    #objects = models.GeoManager()
 
     def __str__(self):
         return self.commune
