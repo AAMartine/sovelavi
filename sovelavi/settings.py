@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.gis',
+    'django.contrib.gis',
 	'dpc',
 )
 
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'sovelavi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'sovelavi',
 		'USER': 'Martine',
         'PASSWORD': 'martine29101991',
