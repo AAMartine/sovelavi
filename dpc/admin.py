@@ -1,8 +1,8 @@
-from django.contrib import admin
+from django.contrib.gis import admin
 
 from .models import Menaces, Caract_Menaces, Risques, Commune
 
-class CommuneAdmin(admin.ModelAdmin):
+class CommuneAdmin(admin.OSMGeoAdmin):
     list_display = ('commune','departemen',)
     search_fields = ('commune', 'departemen',)
 
