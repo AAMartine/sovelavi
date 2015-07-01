@@ -15,5 +15,5 @@ commune_mapping = {
     'geom' : 'POLYGON',
 }
 
-lm = LayerMapping(Commune, 'C:/Users/CLIENT/Documents/Martine/PREMIUM/Projet de Sortie/hti_boundaries_communes_adm2_cnigs_polygon.shp', commune_mapping)
+lm = LayerMapping(Commune, 'C:/Users/CLIENT/Documents/Martine/PREMIUM/Projet de Sortie/hti/hti_boundaries_communes_adm2_cnigs_polygon.shp', commune_mapping)
 lm.save(verbose=True)

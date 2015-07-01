@@ -44,3 +44,4 @@ Temporary Items
 
 *.pyc
 sovelavi/local_settings.py
+dpc/mapping.py
