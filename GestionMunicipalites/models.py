@@ -1,6 +1,6 @@
 from django.contrib.gis.db import models
 
-class Commune(models.Model):
+class CollectivitesTerritoriales(models.Model):
     id_com = models.IntegerField()
     commune = models.CharField(max_length=254)
     id_dep = models.IntegerField()
@@ -16,6 +16,11 @@ class Commune(models.Model):
     def __str__(self):
         return self.commune
  
+class Ressources(models.Model):
+    nom = models.CharField(max_length=50)
+    caracteristiques= models.ForeignKey("Caract_Menaces")
+    duree = models.DurationField()
+
 class Menaces(models.Model):
     nom = models.CharField(max_length=50)
     caracteristiques= models.ForeignKey("Caract_Menaces")

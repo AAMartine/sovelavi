@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-	'dpc',
+	'CollecteTraitementDonnees',
+	'GestionMunicipalites',
 )
 
 MIDDLEWARE_CLASSES = (
