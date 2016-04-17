@@ -1,20 +1,14 @@
 from django.contrib.gis.db import models
 
-class CollectivitesTerritoriales(models.Model):
-    id_com = models.IntegerField()
-    commune = models.CharField(max_length=254)
-    id_dep = models.IntegerField()
-    departemen = models.CharField(max_length=254)
-    shape_leng = models.FloatField()
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    shape_le_1 = models.FloatField()
-    shape_area = models.FloatField()
-    geom = models.MultiPolygonField()
+class Batiments(models.Model):
+    osm_id = models.CharField(max_length=11)
+    name = models.CharField(max_length=48)
+    type = models.CharField(max_length=16)
+    geom = models.MultiPolygonField(srid=4326)
     objects = models.GeoManager()
 
     def __str__(self):
-        return self.commune
+        return self.name
  
 class Ressources(models.Model):
     nom = models.CharField(max_length=50)
