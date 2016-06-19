@@ -1,0 +1,10 @@
+C:\Users\rdorminvil\Documents\Projet\Sovelavi_MVC\Project\BOL\bin\Debug\BOL.dll
+C:\Users\rdorminvil\Documents\Projet\Sovelavi_MVC\Project\BOL\bin\Debug\BOL.pdb
+C:\Users\rdorminvil\Documents\Projet\Sovelavi_MVC\Project\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+C:\Users\rdorminvil\Documents\Projet\Sovelavi_MVC\Project\BOL\obj\Debug\BOL.dll
+C:\Users\rdorminvil\Documents\Projet\Sovelavi_MVC\Project\BOL\obj\Debug\BOL.pdb
+C:\Users\rdorminvil\Documents\GitHub\SoveLaviProj\BOL\bin\Debug\BOL.dll
+C:\Users\rdorminvil\Documents\GitHub\SoveLaviProj\BOL\bin\Debug\BOL.pdb
+C:\Users\rdorminvil\Documents\GitHub\SoveLaviProj\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+C:\Users\rdorminvil\Documents\GitHub\SoveLaviProj\BOL\obj\Debug\BOL.dll
+C:\Users\rdorminvil\Documents\GitHub\SoveLaviProj\BOL\obj\Debug\BOL.pdb
