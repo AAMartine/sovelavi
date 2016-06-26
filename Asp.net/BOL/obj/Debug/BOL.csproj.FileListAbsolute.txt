@@ -15,6 +15,5 @@ C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramew
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.xml
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\obj\Debug\BOL.dll
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\obj\Debug\BOL.pdb
