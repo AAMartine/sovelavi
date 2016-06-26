@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOVELAVIDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_COMMUNE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_EVENEMENT_COMMUNE" Relationship="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_EVENEMENT_COMMUNE" />
+    <NavigationProperty Name="tbl_POI" Relationship="Self.FK_tbl_POI_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_POI" />
+    <NavigationProperty Name="tbl_RESSOURCE" Relationship="Self.FK_tbl_RESSOURCE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_RESSOURCE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_HISTORIQUE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_VULNERABILITE_HISTORIQUE" />
+    <NavigationProperty Name="tbl_VULNERABILITE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_VULNERABILITE" />
+  </EntityType>
+  <EntityType Name="tbl_COU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <Property Name="lattitude" Type="Double" Nullable="false" />
+    <Property Name="longitude" Type="Double" Nullable="false" />
+    <Property Name="activationDate" Type="DateTime" Precision="7" />
+    <Property Name="activationMotif" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_COU_ACTIVATION_HISTORY" Relationship="Self.FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU" FromRole="tbl_COU" ToRole="tbl_COU_ACTIVATION_HISTORY" />
+    <NavigationProperty Name="tbl_COUC" Relationship="Self.FK_tbl_COUC_tbl_COU" FromRole="tbl_COU" ToRole="tbl_COUC" />
+    <NavigationProperty Name="tbl_COUD" Relationship="Self.FK_tbl_COUD_tbl_COU" FromRole="tbl_COU" ToRole="tbl_COUD" />
+    <NavigationProperty Name="tbl_COUN" Relationship="Self.FK_tbl_COUN_tbl_COU" FromRole="tbl_COU" ToRole="tbl_COUN" />
+    <NavigationProperty Name="tbl_USER_ROLE_COU" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_COU" FromRole="tbl_COU" ToRole="tbl_USER_ROLE_COU" />
+  </EntityType>
+  <EntityType Name="tbl_COU_ACTIVATION_HISTORY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="activationStartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="activationEndDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="couId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_COU" Relationship="Self.FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU" FromRole="tbl_COU_ACTIVATION_HISTORY" ToRole="tbl_COU" />
+  </EntityType>
+  <EntityType Name="tbl_COUC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <Property Name="coudId" Type="Int32" />
+    <NavigationProperty Name="tbl_COU" Relationship="Self.FK_tbl_COUC_tbl_COU" FromRole="tbl_COUC" ToRole="tbl_COU" />
+    <NavigationProperty Name="tbl_COUD" Relationship="Self.FK_tbl_COUC_tbl_COUD" FromRole="tbl_COUC" ToRole="tbl_COUD" />
+  </EntityType>
+  <EntityType Name="tbl_COUD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="departementId" Type="Int32" Nullable="false" />
+    <Property Name="counId" Type="Int32" />
+    <NavigationProperty Name="tbl_COU" Relationship="Self.FK_tbl_COUD_tbl_COU" FromRole="tbl_COUD" ToRole="tbl_COU" />
+    <NavigationProperty Name="tbl_COUC" Relationship="Self.FK_tbl_COUC_tbl_COUD" FromRole="tbl_COUD" ToRole="tbl_COUC" />
+    <NavigationProperty Name="tbl_COUN" Relationship="Self.FK_tbl_COUD_tbl_COUN" FromRole="tbl_COUD" ToRole="tbl_COUN" />
+    <NavigationProperty Name="tbl_DEPARTEMENT" Relationship="Self.FK_tbl_COUD_tbl_DEPARTEMENT" FromRole="tbl_COUD" ToRole="tbl_DEPARTEMENT" />
+  </EntityType>
+  <EntityType Name="tbl_COUN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_COU" Relationship="Self.FK_tbl_COUN_tbl_COU" FromRole="tbl_COUN" ToRole="tbl_COU" />
+    <NavigationProperty Name="tbl_COUD" Relationship="Self.FK_tbl_COUD_tbl_COUN" FromRole="tbl_COUN" ToRole="tbl_COUD" />
+  </EntityType>
+  <EntityType Name="tbl_DEGAT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="qteBlesse" Type="Int32" Nullable="false" />
+    <Property Name="qteMorts" Type="Int32" Nullable="false" />
+    <Property Name="niveauDegatsMateriels" Type="Int32" />
+    <NavigationProperty Name="tbl_NIVEAU_DEGAT_MATERIELS" Relationship="Self.FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS" FromRole="tbl_DEGAT" ToRole="tbl_NIVEAU_DEGAT_MATERIELS" />
+  </EntityType>
+  <EntityType Name="tbl_DEPARTEMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_COUD" Relationship="Self.FK_tbl_COUD_tbl_DEPARTEMENT" FromRole="tbl_DEPARTEMENT" ToRole="tbl_COUD" />
+  </EntityType>
+  <EntityType Name="tbl_EVENEMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="statutId" Type="Int32" Nullable="false" />
+    <Property Name="priorite" Type="Int32" Nullable="false" />
+    <Property Name="degatId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_EVENEMENT_COMMUNE" Relationship="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT" FromRole="tbl_EVENEMENT" ToRole="tbl_EVENEMENT_COMMUNE" />
+    <NavigationProperty Name="tbl_PRIORITE_EVENEMENT" Relationship="Self.FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT" FromRole="tbl_EVENEMENT" ToRole="tbl_PRIORITE_EVENEMENT" />
+    <NavigationProperty Name="tbl_STATUT_EVENEMENT" Relationship="Self.FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT" FromRole="tbl_EVENEMENT" ToRole="tbl_STATUT_EVENEMENT" />
+  </EntityType>
+  <EntityType Name="tbl_EVENEMENT_COMMUNE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <Property Name="evenementId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE" FromRole="tbl_EVENEMENT_COMMUNE" ToRole="tbl_COMMUNE" />
+    <NavigationProperty Name="tbl_EVENEMENT" Relationship="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT" FromRole="tbl_EVENEMENT_COMMUNE" ToRole="tbl_EVENEMENT" />
+  </EntityType>
+  <EntityType Name="tbl_INSTITUTION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_LAYER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fileName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="dateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="layerTypeId" Type="Int32" Nullable="false" />
+    <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="validTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="imageName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_LAYER_CATEGORY" Relationship="Self.FK_tbl_LAYER_tbl_LAYER_CATEGORY" FromRole="tbl_LAYER" ToRole="tbl_LAYER_CATEGORY" />
+    <NavigationProperty Name="tbl_LAYER_TYPE" Relationship="Self.FK_tbl_LAYER_tbl_LAYER_TYPE" FromRole="tbl_LAYER" ToRole="tbl_LAYER_TYPE" />
+  </EntityType>
+  <EntityType Name="tbl_LAYER_CATEGORY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_LAYER" Relationship="Self.FK_tbl_LAYER_tbl_LAYER_CATEGORY" FromRole="tbl_LAYER_CATEGORY" ToRole="tbl_LAYER" />
+  </EntityType>
+  <EntityType Name="tbl_LAYER_TYPE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_LAYER" Relationship="Self.FK_tbl_LAYER_tbl_LAYER_TYPE" FromRole="tbl_LAYER_TYPE" ToRole="tbl_LAYER" />
+  </EntityType>
+  <EntityType Name="tbl_MEMBRE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_MENACE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typeMenaceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_TYPE_MENACE" Relationship="Self.FK_tbl_MENACE_tbl_TYPE_MENACE" FromRole="tbl_MENACE" ToRole="tbl_TYPE_MENACE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_HISTORIQUE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" FromRole="tbl_MENACE" ToRole="tbl_VULNERABILITE_HISTORIQUE" />
+    <NavigationProperty Name="tbl_VULNERABILITE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_MENACE" FromRole="tbl_MENACE" ToRole="tbl_VULNERABILITE" />
+  </EntityType>
+  <EntityType Name="tbl_NIVEAU_DEGAT_MATERIELS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="niveau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_DEGAT" Relationship="Self.FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS" FromRole="tbl_NIVEAU_DEGAT_MATERIELS" ToRole="tbl_DEGAT" />
+  </EntityType>
+  <EntityType Name="tbl_POI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="poiType" Type="Int32" Nullable="false" />
+    <Property Name="addresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <Property Name="isVulnerable" Type="Boolean" Nullable="false" />
+    <Property Name="lattitude" Type="Double" />
+    <Property Name="longitude" Type="Double" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_POI_tbl_COMMUNE" FromRole="tbl_POI" ToRole="tbl_COMMUNE" />
+    <NavigationProperty Name="tbl_POI_TYPE" Relationship="Self.FK_tbl_POI_tbl_POI_TYPE" FromRole="tbl_POI" ToRole="tbl_POI_TYPE" />
+  </EntityType>
+  <EntityType Name="tbl_POI_TYPE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_POI" Relationship="Self.FK_tbl_POI_tbl_POI_TYPE" FromRole="tbl_POI_TYPE" ToRole="tbl_POI" />
+  </EntityType>
+  <EntityType Name="tbl_PRIORITE_EVENEMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_EVENEMENT" Relationship="Self.FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT" FromRole="tbl_PRIORITE_EVENEMENT" ToRole="tbl_EVENEMENT" />
+  </EntityType>
+  <EntityType Name="tbl_REPONSE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_RESSOURCE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typeRessourceId" Type="Int32" Nullable="false" />
+    <Property Name="qteDisponible" Type="Int32" Nullable="false" />
+    <Property Name="qteNecessaire" Type="Int32" Nullable="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_RESSOURCE_tbl_COMMUNE" FromRole="tbl_RESSOURCE" ToRole="tbl_COMMUNE" />
+    <NavigationProperty Name="tbl_RESSOURCE_TYPE" Relationship="Self.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" FromRole="tbl_RESSOURCE" ToRole="tbl_RESSOURCE_TYPE" />
+  </EntityType>
+  <EntityType Name="tbl_RESSOURCE_TYPE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_RESSOURCE" Relationship="Self.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" FromRole="tbl_RESSOURCE_TYPE" ToRole="tbl_RESSOURCE" />
+  </EntityType>
+  <EntityType Name="tbl_ROLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_USER_ROLE_COU" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_ROLE" FromRole="tbl_ROLE" ToRole="tbl_USER_ROLE_COU" />
+  </EntityType>
+  <EntityType Name="tbl_SEXE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_USER" Relationship="Self.FK_tbl_USER_tbl_SEXE" FromRole="tbl_SEXE" ToRole="tbl_USER" />
+  </EntityType>
+  <EntityType Name="tbl_STATUT_EVENEMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_EVENEMENT" Relationship="Self.FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT" FromRole="tbl_STATUT_EVENEMENT" ToRole="tbl_EVENEMENT" />
+  </EntityType>
+  <EntityType Name="tbl_TYPE_MENACE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_MENACE" Relationship="Self.FK_tbl_MENACE_tbl_TYPE_MENACE" FromRole="tbl_TYPE_MENACE" ToRole="tbl_MENACE" />
+  </EntityType>
+  <EntityType Name="tbl_USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="passwordHash" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salt" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="lastOnline" Type="DateTime" Precision="3" />
+    <Property Name="telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sexeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_SEXE" Relationship="Self.FK_tbl_USER_tbl_SEXE" FromRole="tbl_USER" ToRole="tbl_SEXE" />
+    <NavigationProperty Name="tbl_USER_ROLE_COU" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_USER" FromRole="tbl_USER" ToRole="tbl_USER_ROLE_COU" />
+  </EntityType>
+  <EntityType Name="tbl_USER_ROLE_COU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="couId" Type="Int32" Nullable="false" />
+    <Property Name="roleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_COU" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_COU" FromRole="tbl_USER_ROLE_COU" ToRole="tbl_COU" />
+    <NavigationProperty Name="tbl_ROLE" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_ROLE" FromRole="tbl_USER_ROLE_COU" ToRole="tbl_ROLE" />
+    <NavigationProperty Name="tbl_USER" Relationship="Self.FK_tbl_USER_ROLE_COU_tbl_USER" FromRole="tbl_USER_ROLE_COU" ToRole="tbl_USER" />
+  </EntityType>
+  <EntityType Name="tbl_VULNERABILITE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <Property Name="menaceId" Type="Int32" Nullable="false" />
+    <Property Name="niveauVulnerabiliteID" Type="Int32" Nullable="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_COMMUNE" FromRole="tbl_VULNERABILITE" ToRole="tbl_COMMUNE" />
+    <NavigationProperty Name="tbl_MENACE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_MENACE" FromRole="tbl_VULNERABILITE" ToRole="tbl_MENACE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_NIVEAU" Relationship="Self.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE" ToRole="tbl_VULNERABILITE_NIVEAU" />
+  </EntityType>
+  <EntityType Name="tbl_VULNERABILITE_HISTORIQUE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="communeId" Type="Int32" Nullable="false" />
+    <Property Name="menaceId" Type="Int32" Nullable="false" />
+    <Property Name="niveauVulnerabiliteId" Type="Int32" Nullable="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_COMMUNE" />
+    <NavigationProperty Name="tbl_MENACE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_MENACE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_NIVEAU" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_VULNERABILITE_NIVEAU" />
+  </EntityType>
+  <EntityType Name="tbl_VULNERABILITE_NIVEAU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_VULNERABILITE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_NIVEAU" ToRole="tbl_VULNERABILITE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_HISTORIQUE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_NIVEAU" ToRole="tbl_VULNERABILITE_HISTORIQUE" />
+  </EntityType>
+  <Association Name="FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_EVENEMENT_COMMUNE" Type="Self.tbl_EVENEMENT_COMMUNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVENEMENT_COMMUNE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_POI_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_POI" Type="Self.tbl_POI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_POI">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_RESSOURCE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_RESSOURCE" Type="Self.tbl_RESSOURCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_RESSOURCE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE" Type="Self.tbl_VULNERABILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU">
+    <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="1" />
+    <End Role="tbl_COU_ACTIVATION_HISTORY" Type="Self.tbl_COU_ACTIVATION_HISTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COU_ACTIVATION_HISTORY">
+        <PropertyRef Name="couId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUC_tbl_COU">
+    <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="1" />
+    <End Role="tbl_COUC" Type="Self.tbl_COUC" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUC">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUD_tbl_COU">
+    <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="1" />
+    <End Role="tbl_COUD" Type="Self.tbl_COUD" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUD">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUN_tbl_COU">
+    <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="1" />
+    <End Role="tbl_COUN" Type="Self.tbl_COUN" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUN">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_USER_ROLE_COU_tbl_COU">
+    <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="1" />
+    <End Role="tbl_USER_ROLE_COU" Type="Self.tbl_USER_ROLE_COU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_USER_ROLE_COU">
+        <PropertyRef Name="couId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUC_tbl_COUD">
+    <End Role="tbl_COUD" Type="Self.tbl_COUD" Multiplicity="0..1" />
+    <End Role="tbl_COUC" Type="Self.tbl_COUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COUD">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUC">
+        <PropertyRef Name="coudId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUD_tbl_COUN">
+    <End Role="tbl_COUN" Type="Self.tbl_COUN" Multiplicity="0..1" />
+    <End Role="tbl_COUD" Type="Self.tbl_COUD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COUN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUD">
+        <PropertyRef Name="counId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_COUD_tbl_DEPARTEMENT">
+    <End Role="tbl_DEPARTEMENT" Type="Self.tbl_DEPARTEMENT" Multiplicity="1" />
+    <End Role="tbl_COUD" Type="Self.tbl_COUD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_DEPARTEMENT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_COUD">
+        <PropertyRef Name="departementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS">
+    <End Role="tbl_NIVEAU_DEGAT_MATERIELS" Type="Self.tbl_NIVEAU_DEGAT_MATERIELS" Multiplicity="0..1" />
+    <End Role="tbl_DEGAT" Type="Self.tbl_DEGAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_NIVEAU_DEGAT_MATERIELS">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_DEGAT">
+        <PropertyRef Name="niveauDegatsMateriels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT">
+    <End Role="tbl_EVENEMENT" Type="Self.tbl_EVENEMENT" Multiplicity="1" />
+    <End Role="tbl_EVENEMENT_COMMUNE" Type="Self.tbl_EVENEMENT_COMMUNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_EVENEMENT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVENEMENT_COMMUNE">
+        <PropertyRef Name="evenementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT">
+    <End Role="tbl_PRIORITE_EVENEMENT" Type="Self.tbl_PRIORITE_EVENEMENT" Multiplicity="1" />
+    <End Role="tbl_EVENEMENT" Type="Self.tbl_EVENEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PRIORITE_EVENEMENT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVENEMENT">
+        <PropertyRef Name="priorite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT">
+    <End Role="tbl_STATUT_EVENEMENT" Type="Self.tbl_STATUT_EVENEMENT" Multiplicity="1" />
+    <End Role="tbl_EVENEMENT" Type="Self.tbl_EVENEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_STATUT_EVENEMENT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVENEMENT">
+        <PropertyRef Name="statutId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_LAYER_tbl_LAYER_CATEGORY">
+    <End Role="tbl_LAYER_CATEGORY" Type="Self.tbl_LAYER_CATEGORY" Multiplicity="1" />
+    <End Role="tbl_LAYER" Type="Self.tbl_LAYER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LAYER_CATEGORY">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_LAYER">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_LAYER_tbl_LAYER_TYPE">
+    <End Role="tbl_LAYER_TYPE" Type="Self.tbl_LAYER_TYPE" Multiplicity="1" />
+    <End Role="tbl_LAYER" Type="Self.tbl_LAYER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LAYER_TYPE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_LAYER">
+        <PropertyRef Name="layerTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MENACE_tbl_TYPE_MENACE">
+    <End Role="tbl_TYPE_MENACE" Type="Self.tbl_TYPE_MENACE" Multiplicity="1" />
+    <End Role="tbl_MENACE" Type="Self.tbl_MENACE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_TYPE_MENACE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_MENACE">
+        <PropertyRef Name="typeMenaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
+    <End Role="tbl_MENACE" Type="Self.tbl_MENACE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MENACE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
+        <PropertyRef Name="menaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_tbl_MENACE">
+    <End Role="tbl_MENACE" Type="Self.tbl_MENACE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE" Type="Self.tbl_VULNERABILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MENACE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE">
+        <PropertyRef Name="menaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_POI_tbl_POI_TYPE">
+    <End Role="tbl_POI_TYPE" Type="Self.tbl_POI_TYPE" Multiplicity="1" />
+    <End Role="tbl_POI" Type="Self.tbl_POI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_POI_TYPE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_POI">
+        <PropertyRef Name="poiType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE">
+    <End Role="tbl_RESSOURCE_TYPE" Type="Self.tbl_RESSOURCE_TYPE" Multiplicity="1" />
+    <End Role="tbl_RESSOURCE" Type="Self.tbl_RESSOURCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RESSOURCE_TYPE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_RESSOURCE">
+        <PropertyRef Name="typeRessourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_USER_ROLE_COU_tbl_ROLE">
+    <End Role="tbl_ROLE" Type="Self.tbl_ROLE" Multiplicity="1" />
+    <End Role="tbl_USER_ROLE_COU" Type="Self.tbl_USER_ROLE_COU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ROLE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_USER_ROLE_COU">
+        <PropertyRef Name="roleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_USER_tbl_SEXE">
+    <End Role="tbl_SEXE" Type="Self.tbl_SEXE" Multiplicity="1" />
+    <End Role="tbl_USER" Type="Self.tbl_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SEXE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_USER">
+        <PropertyRef Name="sexeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_USER_ROLE_COU_tbl_USER">
+    <End Role="tbl_USER" Type="Self.tbl_USER" Multiplicity="1" />
+    <End Role="tbl_USER_ROLE_COU" Type="Self.tbl_USER_ROLE_COU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_USER_ROLE_COU">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU">
+    <End Role="tbl_VULNERABILITE_NIVEAU" Type="Self.tbl_VULNERABILITE_NIVEAU" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE" Type="Self.tbl_VULNERABILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_VULNERABILITE_NIVEAU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE">
+        <PropertyRef Name="niveauVulnerabiliteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU">
+    <End Role="tbl_VULNERABILITE_NIVEAU" Type="Self.tbl_VULNERABILITE_NIVEAU" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_VULNERABILITE_NIVEAU">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
+        <PropertyRef Name="niveauVulnerabiliteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SOVELAVIDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_COMMUNE" EntityType="Self.tbl_COMMUNE" />
+    <EntitySet Name="tbl_COU" EntityType="Self.tbl_COU" />
+    <EntitySet Name="tbl_COU_ACTIVATION_HISTORY" EntityType="Self.tbl_COU_ACTIVATION_HISTORY" />
+    <EntitySet Name="tbl_COUC" EntityType="Self.tbl_COUC" />
+    <EntitySet Name="tbl_COUD" EntityType="Self.tbl_COUD" />
+    <EntitySet Name="tbl_COUN" EntityType="Self.tbl_COUN" />
+    <EntitySet Name="tbl_DEGAT" EntityType="Self.tbl_DEGAT" />
+    <EntitySet Name="tbl_DEPARTEMENT" EntityType="Self.tbl_DEPARTEMENT" />
+    <EntitySet Name="tbl_EVENEMENT" EntityType="Self.tbl_EVENEMENT" />
+    <EntitySet Name="tbl_EVENEMENT_COMMUNE" EntityType="Self.tbl_EVENEMENT_COMMUNE" />
+    <EntitySet Name="tbl_INSTITUTION" EntityType="Self.tbl_INSTITUTION" />
+    <EntitySet Name="tbl_LAYER" EntityType="Self.tbl_LAYER" />
+    <EntitySet Name="tbl_LAYER_CATEGORY" EntityType="Self.tbl_LAYER_CATEGORY" />
+    <EntitySet Name="tbl_LAYER_TYPE" EntityType="Self.tbl_LAYER_TYPE" />
+    <EntitySet Name="tbl_MEMBRE" EntityType="Self.tbl_MEMBRE" />
+    <EntitySet Name="tbl_MENACE" EntityType="Self.tbl_MENACE" />
+    <EntitySet Name="tbl_NIVEAU_DEGAT_MATERIELS" EntityType="Self.tbl_NIVEAU_DEGAT_MATERIELS" />
+    <EntitySet Name="tbl_POI" EntityType="Self.tbl_POI" />
+    <EntitySet Name="tbl_POI_TYPE" EntityType="Self.tbl_POI_TYPE" />
+    <EntitySet Name="tbl_PRIORITE_EVENEMENT" EntityType="Self.tbl_PRIORITE_EVENEMENT" />
+    <EntitySet Name="tbl_REPONSE" EntityType="Self.tbl_REPONSE" />
+    <EntitySet Name="tbl_RESSOURCE" EntityType="Self.tbl_RESSOURCE" />
+    <EntitySet Name="tbl_RESSOURCE_TYPE" EntityType="Self.tbl_RESSOURCE_TYPE" />
+    <EntitySet Name="tbl_ROLE" EntityType="Self.tbl_ROLE" />
+    <EntitySet Name="tbl_SEXE" EntityType="Self.tbl_SEXE" />
+    <EntitySet Name="tbl_STATUT_EVENEMENT" EntityType="Self.tbl_STATUT_EVENEMENT" />
+    <EntitySet Name="tbl_TYPE_MENACE" EntityType="Self.tbl_TYPE_MENACE" />
+    <EntitySet Name="tbl_USER" EntityType="Self.tbl_USER" />
+    <EntitySet Name="tbl_USER_ROLE_COU" EntityType="Self.tbl_USER_ROLE_COU" />
+    <EntitySet Name="tbl_VULNERABILITE" EntityType="Self.tbl_VULNERABILITE" />
+    <EntitySet Name="tbl_VULNERABILITE_HISTORIQUE" EntityType="Self.tbl_VULNERABILITE_HISTORIQUE" />
+    <EntitySet Name="tbl_VULNERABILITE_NIVEAU" EntityType="Self.tbl_VULNERABILITE_NIVEAU" />
+    <AssociationSet Name="FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE" Association="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_EVENEMENT_COMMUNE" EntitySet="tbl_EVENEMENT_COMMUNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_POI_tbl_COMMUNE" Association="Self.FK_tbl_POI_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_POI" EntitySet="tbl_POI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_RESSOURCE_tbl_COMMUNE" Association="Self.FK_tbl_RESSOURCE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_RESSOURCE" EntitySet="tbl_RESSOURCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_tbl_COMMUNE" Association="Self.FK_tbl_VULNERABILITE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_VULNERABILITE" EntitySet="tbl_VULNERABILITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU" Association="Self.FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU">
+      <End Role="tbl_COU" EntitySet="tbl_COU" />
+      <End Role="tbl_COU_ACTIVATION_HISTORY" EntitySet="tbl_COU_ACTIVATION_HISTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUC_tbl_COU" Association="Self.FK_tbl_COUC_tbl_COU">
+      <End Role="tbl_COU" EntitySet="tbl_COU" />
+      <End Role="tbl_COUC" EntitySet="tbl_COUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUD_tbl_COU" Association="Self.FK_tbl_COUD_tbl_COU">
+      <End Role="tbl_COU" EntitySet="tbl_COU" />
+      <End Role="tbl_COUD" EntitySet="tbl_COUD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUN_tbl_COU" Association="Self.FK_tbl_COUN_tbl_COU">
+      <End Role="tbl_COU" EntitySet="tbl_COU" />
+      <End Role="tbl_COUN" EntitySet="tbl_COUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_USER_ROLE_COU_tbl_COU" Association="Self.FK_tbl_USER_ROLE_COU_tbl_COU">
+      <End Role="tbl_COU" EntitySet="tbl_COU" />
+      <End Role="tbl_USER_ROLE_COU" EntitySet="tbl_USER_ROLE_COU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUC_tbl_COUD" Association="Self.FK_tbl_COUC_tbl_COUD">
+      <End Role="tbl_COUD" EntitySet="tbl_COUD" />
+      <End Role="tbl_COUC" EntitySet="tbl_COUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUD_tbl_COUN" Association="Self.FK_tbl_COUD_tbl_COUN">
+      <End Role="tbl_COUN" EntitySet="tbl_COUN" />
+      <End Role="tbl_COUD" EntitySet="tbl_COUD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_COUD_tbl_DEPARTEMENT" Association="Self.FK_tbl_COUD_tbl_DEPARTEMENT">
+      <End Role="tbl_DEPARTEMENT" EntitySet="tbl_DEPARTEMENT" />
+      <End Role="tbl_COUD" EntitySet="tbl_COUD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS" Association="Self.FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS">
+      <End Role="tbl_NIVEAU_DEGAT_MATERIELS" EntitySet="tbl_NIVEAU_DEGAT_MATERIELS" />
+      <End Role="tbl_DEGAT" EntitySet="tbl_DEGAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT" Association="Self.FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT">
+      <End Role="tbl_EVENEMENT" EntitySet="tbl_EVENEMENT" />
+      <End Role="tbl_EVENEMENT_COMMUNE" EntitySet="tbl_EVENEMENT_COMMUNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT" Association="Self.FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT">
+      <End Role="tbl_PRIORITE_EVENEMENT" EntitySet="tbl_PRIORITE_EVENEMENT" />
+      <End Role="tbl_EVENEMENT" EntitySet="tbl_EVENEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT" Association="Self.FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT">
+      <End Role="tbl_STATUT_EVENEMENT" EntitySet="tbl_STATUT_EVENEMENT" />
+      <End Role="tbl_EVENEMENT" EntitySet="tbl_EVENEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_LAYER_tbl_LAYER_CATEGORY" Association="Self.FK_tbl_LAYER_tbl_LAYER_CATEGORY">
+      <End Role="tbl_LAYER_CATEGORY" EntitySet="tbl_LAYER_CATEGORY" />
+      <End Role="tbl_LAYER" EntitySet="tbl_LAYER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_LAYER_tbl_LAYER_TYPE" Association="Self.FK_tbl_LAYER_tbl_LAYER_TYPE">
+      <End Role="tbl_LAYER_TYPE" EntitySet="tbl_LAYER_TYPE" />
+      <End Role="tbl_LAYER" EntitySet="tbl_LAYER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MENACE_tbl_TYPE_MENACE" Association="Self.FK_tbl_MENACE_tbl_TYPE_MENACE">
+      <End Role="tbl_TYPE_MENACE" EntitySet="tbl_TYPE_MENACE" />
+      <End Role="tbl_MENACE" EntitySet="tbl_MENACE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
+      <End Role="tbl_MENACE" EntitySet="tbl_MENACE" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_tbl_MENACE" Association="Self.FK_tbl_VULNERABILITE_tbl_MENACE">
+      <End Role="tbl_MENACE" EntitySet="tbl_MENACE" />
+      <End Role="tbl_VULNERABILITE" EntitySet="tbl_VULNERABILITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_POI_tbl_POI_TYPE" Association="Self.FK_tbl_POI_tbl_POI_TYPE">
+      <End Role="tbl_POI_TYPE" EntitySet="tbl_POI_TYPE" />
+      <End Role="tbl_POI" EntitySet="tbl_POI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" Association="Self.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE">
+      <End Role="tbl_RESSOURCE_TYPE" EntitySet="tbl_RESSOURCE_TYPE" />
+      <End Role="tbl_RESSOURCE" EntitySet="tbl_RESSOURCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_USER_ROLE_COU_tbl_ROLE" Association="Self.FK_tbl_USER_ROLE_COU_tbl_ROLE">
+      <End Role="tbl_ROLE" EntitySet="tbl_ROLE" />
+      <End Role="tbl_USER_ROLE_COU" EntitySet="tbl_USER_ROLE_COU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_USER_tbl_SEXE" Association="Self.FK_tbl_USER_tbl_SEXE">
+      <End Role="tbl_SEXE" EntitySet="tbl_SEXE" />
+      <End Role="tbl_USER" EntitySet="tbl_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_USER_ROLE_COU_tbl_USER" Association="Self.FK_tbl_USER_ROLE_COU_tbl_USER">
+      <End Role="tbl_USER" EntitySet="tbl_USER" />
+      <End Role="tbl_USER_ROLE_COU" EntitySet="tbl_USER_ROLE_COU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" Association="Self.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU">
+      <End Role="tbl_VULNERABILITE_NIVEAU" EntitySet="tbl_VULNERABILITE_NIVEAU" />
+      <End Role="tbl_VULNERABILITE" EntitySet="tbl_VULNERABILITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU">
+      <End Role="tbl_VULNERABILITE_NIVEAU" EntitySet="tbl_VULNERABILITE_NIVEAU" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e07d91476b154fbcbe8c06db952cc965" Name="Diagram1">
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COMMUNE" Width="1.5" PointX="8.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU_ACTIVATION_HISTORY" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COUC" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COUD" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COUN" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_DEGAT" Width="1.5" PointX="16" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_DEPARTEMENT" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT" Width="1.5" PointX="8.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT_COMMUNE" Width="1.5" PointX="11" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_INSTITUTION" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER" Width="1.5" PointX="16" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_CATEGORY" Width="1.5" PointX="13.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_TYPE" Width="1.5" PointX="13.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MEMBRE" Width="1.5" PointX="5.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MENACE" Width="1.5" PointX="11.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU_DEGAT_MATERIELS" Width="1.5" PointX="13.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI" Width="1.5" PointX="14" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI_TYPE" Width="1.5" PointX="11.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PRIORITE_EVENEMENT" Width="1.5" PointX="6.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_REPONSE" Width="1.5" PointX="16.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE" Width="1.5" PointX="11" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE_TYPE" Width="1.5" PointX="8.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ROLE" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_SEXE" Width="1.5" PointX="1.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_STATUT_EVENEMENT" Width="1.5" PointX="6.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_MENACE" Width="1.5" PointX="9.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER_ROLE_COU" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE" Width="1.5" PointX="11" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_HISTORIQUE" Width="1.5" PointX="14" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_NIVEAU" Width="1.5" PointX="11.75" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_COMMUNE_tbl_COMMUNE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_POI_tbl_COMMUNE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_RESSOURCE_tbl_COMMUNE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_tbl_COMMUNE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COU_ACTIVATION_HISTORY_tbl_COU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUC_tbl_COU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUD_tbl_COU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUN_tbl_COU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_USER_ROLE_COU_tbl_COU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUC_tbl_COUD" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUD_tbl_COUN" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_COUD_tbl_DEPARTEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_DEGAT_tbl_NIVEAU_DEGAT_MATERIELS" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_COMMUNE_tbl_EVENEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_tbl_STATUT_EVENEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_LAYER_tbl_LAYER_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_LAYER_tbl_LAYER_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_MENACE_tbl_TYPE_MENACE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_tbl_MENACE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_POI_tbl_POI_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_USER_ROLE_COU_tbl_ROLE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_USER_tbl_SEXE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_USER_ROLE_COU_tbl_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SOVELAVIDBModelStoreContainer" CdmEntityContainer="SOVELAVIDBEntities">
+    <EntitySetMapping Name="tbl_COMMUNE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COMMUNE">
+        <MappingFragment StoreEntitySet="tbl_COMMUNE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_COU">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COU">
+        <MappingFragment StoreEntitySet="tbl_COU">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="lattitude" ColumnName="lattitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="activationDate" ColumnName="activationDate" />
+          <ScalarProperty Name="activationMotif" ColumnName="activationMotif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_COU_ACTIVATION_HISTORY">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COU_ACTIVATION_HISTORY">
+        <MappingFragment StoreEntitySet="tbl_COU_ACTIVATION_HISTORY">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="activationStartDate" ColumnName="activationStartDate" />
+          <ScalarProperty Name="activationEndDate" ColumnName="activationEndDate" />
+          <ScalarProperty Name="couId" ColumnName="couId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_COUC">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COUC">
+        <MappingFragment StoreEntitySet="tbl_COUC">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+          <ScalarProperty Name="coudId" ColumnName="coudId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_COUD">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COUD">
+        <MappingFragment StoreEntitySet="tbl_COUD">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="departementId" ColumnName="departementId" />
+          <ScalarProperty Name="counId" ColumnName="counId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_COUN">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_COUN">
+        <MappingFragment StoreEntitySet="tbl_COUN">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_DEGAT">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_DEGAT">
+        <MappingFragment StoreEntitySet="tbl_DEGAT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="qteBlesse" ColumnName="qteBlesse" />
+          <ScalarProperty Name="qteMorts" ColumnName="qteMorts" />
+          <ScalarProperty Name="niveauDegatsMateriels" ColumnName="niveauDegatsMateriels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_DEPARTEMENT">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_DEPARTEMENT">
+        <MappingFragment StoreEntitySet="tbl_DEPARTEMENT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EVENEMENT">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_EVENEMENT">
+        <MappingFragment StoreEntitySet="tbl_EVENEMENT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statutId" ColumnName="statutId" />
+          <ScalarProperty Name="priorite" ColumnName="priorite" />
+          <ScalarProperty Name="degatId" ColumnName="degatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EVENEMENT_COMMUNE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_EVENEMENT_COMMUNE">
+        <MappingFragment StoreEntitySet="tbl_EVENEMENT_COMMUNE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+          <ScalarProperty Name="evenementId" ColumnName="evenementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_INSTITUTION">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_INSTITUTION">
+        <MappingFragment StoreEntitySet="tbl_INSTITUTION">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LAYER">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_LAYER">
+        <MappingFragment StoreEntitySet="tbl_LAYER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="layerTypeId" ColumnName="layerTypeId" />
+          <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+          <ScalarProperty Name="validTo" ColumnName="validTo" />
+          <ScalarProperty Name="imageName" ColumnName="imageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LAYER_CATEGORY">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_LAYER_CATEGORY">
+        <MappingFragment StoreEntitySet="tbl_LAYER_CATEGORY">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LAYER_TYPE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_LAYER_TYPE">
+        <MappingFragment StoreEntitySet="tbl_LAYER_TYPE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MEMBRE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_MEMBRE">
+        <MappingFragment StoreEntitySet="tbl_MEMBRE">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MENACE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_MENACE">
+        <MappingFragment StoreEntitySet="tbl_MENACE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="typeMenaceId" ColumnName="typeMenaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NIVEAU_DEGAT_MATERIELS">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_NIVEAU_DEGAT_MATERIELS">
+        <MappingFragment StoreEntitySet="tbl_NIVEAU_DEGAT_MATERIELS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="niveau" ColumnName="niveau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_POI">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_POI">
+        <MappingFragment StoreEntitySet="tbl_POI">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="poiType" ColumnName="poiType" />
+          <ScalarProperty Name="addresse" ColumnName="addresse" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+          <ScalarProperty Name="isVulnerable" ColumnName="isVulnerable" />
+          <ScalarProperty Name="lattitude" ColumnName="lattitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_POI_TYPE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_POI_TYPE">
+        <MappingFragment StoreEntitySet="tbl_POI_TYPE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PRIORITE_EVENEMENT">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_PRIORITE_EVENEMENT">
+        <MappingFragment StoreEntitySet="tbl_PRIORITE_EVENEMENT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_REPONSE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_REPONSE">
+        <MappingFragment StoreEntitySet="tbl_REPONSE">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RESSOURCE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_RESSOURCE">
+        <MappingFragment StoreEntitySet="tbl_RESSOURCE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="typeRessourceId" ColumnName="typeRessourceId" />
+          <ScalarProperty Name="qteDisponible" ColumnName="qteDisponible" />
+          <ScalarProperty Name="qteNecessaire" ColumnName="qteNecessaire" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RESSOURCE_TYPE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_RESSOURCE_TYPE">
+        <MappingFragment StoreEntitySet="tbl_RESSOURCE_TYPE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ROLE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_ROLE">
+        <MappingFragment StoreEntitySet="tbl_ROLE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SEXE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_SEXE">
+        <MappingFragment StoreEntitySet="tbl_SEXE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_STATUT_EVENEMENT">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_STATUT_EVENEMENT">
+        <MappingFragment StoreEntitySet="tbl_STATUT_EVENEMENT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TYPE_MENACE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_TYPE_MENACE">
+        <MappingFragment StoreEntitySet="tbl_TYPE_MENACE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_USER">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_USER">
+        <MappingFragment StoreEntitySet="tbl_USER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passwordHash" ColumnName="passwordHash" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="lastOnline" ColumnName="lastOnline" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="sexeId" ColumnName="sexeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_USER_ROLE_COU">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_USER_ROLE_COU">
+        <MappingFragment StoreEntitySet="tbl_USER_ROLE_COU">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="couId" ColumnName="couId" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_VULNERABILITE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_VULNERABILITE">
+        <MappingFragment StoreEntitySet="tbl_VULNERABILITE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+          <ScalarProperty Name="menaceId" ColumnName="menaceId" />
+          <ScalarProperty Name="niveauVulnerabiliteID" ColumnName="niveauVulnerabiliteID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_VULNERABILITE_HISTORIQUE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_VULNERABILITE_HISTORIQUE">
+        <MappingFragment StoreEntitySet="tbl_VULNERABILITE_HISTORIQUE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="communeId" ColumnName="communeId" />
+          <ScalarProperty Name="menaceId" ColumnName="menaceId" />
+          <ScalarProperty Name="niveauVulnerabiliteId" ColumnName="niveauVulnerabiliteId" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_VULNERABILITE_NIVEAU">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_VULNERABILITE_NIVEAU">
+        <MappingFragment StoreEntitySet="tbl_VULNERABILITE_NIVEAU">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
