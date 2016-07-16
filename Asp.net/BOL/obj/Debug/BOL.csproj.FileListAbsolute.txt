@@ -1,0 +1,9 @@
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\BOL.dll.config
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\BOL.dll
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\BOL.pdb
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\EntityFramework.dll
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\EntityFramework.xml
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\obj\Debug\BOL.dll
+C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\obj\Debug\BOL.pdb
