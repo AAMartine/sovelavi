@@ -14,13 +14,27 @@ namespace BOL
     
     public partial class tbl_DONNEE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_DONNEE()
+        {
+            this.tbl_PHOTO = new HashSet<tbl_PHOTO>();
+            this.tbl_TAG = new HashSet<tbl_TAG>();
+        }
+    
         public int id { get; set; }
         public string info { get; set; }
         public System.DateTime createdDate { get; set; }
         public int createdBy { get; set; }
         public int fiabiliteSource { get; set; }
         public string titre { get; set; }
+        public bool isVerified { get; set; }
+        public int prioriteId { get; set; }
     
         public virtual tbl_FIABILITE_SOURCE tbl_FIABILITE_SOURCE { get; set; }
+        public virtual tbl_PRIORITE_DONNEE tbl_PRIORITE_DONNEE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_PHOTO> tbl_PHOTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_TAG> tbl_TAG { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\MarcGrecoPeralte\documents\visual studio 2015\Projects\SoveLavi\BOL\SoveLaviModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

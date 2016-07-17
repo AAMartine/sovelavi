@@ -14,15 +14,23 @@ namespace BOL
     
     public partial class tbl_POI
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_POI()
+        {
+            this.tbl_POI_MENACE_VULNERABILITE = new HashSet<tbl_POI_MENACE_VULNERABILITE>();
+        }
+    
         public int id { get; set; }
         public string nom { get; set; }
         public int poiType { get; set; }
         public string addresse { get; set; }
         public int communeId { get; set; }
-        public bool isVulnerable { get; set; }
-        public double lattitude { get; set; }
+        public bool isArisque { get; set; }
+        public double latitude { get; set; }
         public double longitude { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_POI_MENACE_VULNERABILITE> tbl_POI_MENACE_VULNERABILITE { get; set; }
         public virtual tbl_POI_TYPE tbl_POI_TYPE { get; set; }
     }
 }

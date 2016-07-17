@@ -14,6 +14,13 @@ namespace BOL
     
     public partial class tbl_EVENEMENT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_EVENEMENT()
+        {
+            this.tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE = new HashSet<tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE>();
+            this.tbl_EVENEMENT_TYPE_DEGAT = new HashSet<tbl_EVENEMENT_TYPE_DEGAT>();
+        }
+    
         public int id { get; set; }
         public int priorite { get; set; }
         public string nom { get; set; }
@@ -23,9 +30,14 @@ namespace BOL
         public double longittude { get; set; }
         public int menace { get; set; }
         public int type { get; set; }
+        public Nullable<int> degatId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE> tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE { get; set; }
         public virtual tbl_MENACE tbl_MENACE { get; set; }
         public virtual tbl_PRIORITE_EVENEMENT tbl_PRIORITE_EVENEMENT { get; set; }
         public virtual tbl_TYPE_EVENEMENT tbl_TYPE_EVENEMENT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_EVENEMENT_TYPE_DEGAT> tbl_EVENEMENT_TYPE_DEGAT { get; set; }
     }
 }

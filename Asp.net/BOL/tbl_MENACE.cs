@@ -18,6 +18,10 @@ namespace BOL
         public tbl_MENACE()
         {
             this.tbl_EVENEMENT = new HashSet<tbl_EVENEMENT>();
+            this.tbl_MENACE_INTENSITE = new HashSet<tbl_MENACE_INTENSITE>();
+            this.tbl_POI_MENACE_VULNERABILITE = new HashSet<tbl_POI_MENACE_VULNERABILITE>();
+            this.tbl_VULNERABILITE_HISTORIQUE = new HashSet<tbl_VULNERABILITE_HISTORIQUE>();
+            this.tbl_VULNERABILITE = new HashSet<tbl_VULNERABILITE>();
         }
     
         public int id { get; set; }
@@ -26,6 +30,14 @@ namespace BOL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EVENEMENT> tbl_EVENEMENT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_MENACE_INTENSITE> tbl_MENACE_INTENSITE { get; set; }
         public virtual tbl_TYPE_MENACE tbl_TYPE_MENACE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_POI_MENACE_VULNERABILITE> tbl_POI_MENACE_VULNERABILITE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_VULNERABILITE_HISTORIQUE> tbl_VULNERABILITE_HISTORIQUE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_VULNERABILITE> tbl_VULNERABILITE { get; set; }
     }
 }
