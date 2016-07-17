@@ -56,6 +56,7 @@
     <NavigationProperty Name="tbl_COLLECTIVITE_TERRITORIALE" Relationship="Self.FK_tbl_COLLECTIVITE_TERRITORIALE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_COLLECTIVITE_TERRITORIALE" />
     <NavigationProperty Name="tbl_DEPARTEMENT" Relationship="Self.FK_tbl_COMMUNE_tbl_DEPARTEMENT" FromRole="tbl_COMMUNE" ToRole="tbl_DEPARTEMENT" />
     <NavigationProperty Name="tbl_SECTION_COMMUNALE" Relationship="Self.FK_tbl_SECTION_COMMUNALE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_SECTION_COMMUNALE" />
+    <NavigationProperty Name="tbl_VULNERABILITE_HISTORIQUE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" FromRole="tbl_COMMUNE" ToRole="tbl_VULNERABILITE_HISTORIQUE" />
   </EntityType>
   <EntityType Name="tbl_CONTACT">
     <Key>
@@ -537,6 +538,7 @@
     <Property Name="niveauVulnerabiliteId" Type="Int32" Nullable="false" />
     <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_COMMUNE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_COMMUNE" />
     <NavigationProperty Name="tbl_MENACE" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_MENACE" />
     <NavigationProperty Name="tbl_VULNERABILITE_NIVEAU" Relationship="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_HISTORIQUE" ToRole="tbl_VULNERABILITE_NIVEAU" />
   </EntityType>
@@ -764,6 +766,18 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="tbl_SECTION_COMMUNALE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
         <PropertyRef Name="communeId" />
       </Dependent>
     </ReferentialConstraint>
@@ -1348,6 +1362,10 @@
     <AssociationSet Name="FK_tbl_SECTION_COMMUNALE_tbl_COMMUNE" Association="Self.FK_tbl_SECTION_COMMUNALE_tbl_COMMUNE">
       <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
       <End Role="tbl_SECTION_COMMUNALE" EntitySet="tbl_SECTION_COMMUNALE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_INSTITUTION_tbl_CONTACT" Association="Self.FK_tbl_INSTITUTION_tbl_CONTACT">
       <End Role="tbl_CONTACT" EntitySet="tbl_CONTACT" />

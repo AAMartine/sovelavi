@@ -1116,6 +1116,18 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
     <End Role="tbl_MENACE" Type="Self.tbl_MENACE" Multiplicity="1" />
     <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
@@ -1448,6 +1460,10 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <AssociationSet Name="FK_tbl_USER_tbl_SEXE" Association="Self.FK_tbl_USER_tbl_SEXE">
       <End Role="tbl_SEXE" EntitySet="tbl_SEXE" />
       <End Role="tbl_USER" EntitySet="tbl_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
       <End Role="tbl_MENACE" EntitySet="tbl_MENACE" />

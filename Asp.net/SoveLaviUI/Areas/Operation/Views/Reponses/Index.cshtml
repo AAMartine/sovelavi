@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BOL.tbl_REPONSE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.heureDecision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.heureImpactEffectif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.heureImpactEspeere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_TYPE_REPONSE.nom)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.heureDecision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.heureImpactEffectif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.heureImpactEspeere)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_TYPE_REPONSE.nom)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
