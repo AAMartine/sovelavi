@@ -312,7 +312,7 @@
           <ScalarProperty Name="typeId" ColumnName="typeId" />
           <ScalarProperty Name="heureDecision" ColumnName="heureDecision" />
           <ScalarProperty Name="heureImpactEffectif" ColumnName="heureImpactEffectif" />
-          <ScalarProperty Name="heureImpactEspeere" ColumnName="heureImpactEspeere" />
+          <ScalarProperty Name="heureImpactEspere" ColumnName="heureImpactEspere" />
           <ScalarProperty Name="description" ColumnName="description" />
         </MappingFragment>
       </EntityTypeMapping>

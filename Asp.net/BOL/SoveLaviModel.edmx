@@ -309,8 +309,8 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Property Name="typeId" Type="int" Nullable="false" />
           <Property Name="heureDecision" Type="datetime" Nullable="false" />
           <Property Name="heureImpactEffectif" Type="datetime" />
-          <Property Name="heureImpactEspeere" Type="datetime" Nullable="false" />
-          <Property Name="description" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="heureImpactEspere" Type="datetime" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_RESSOURCE">
           <Key>
@@ -1854,8 +1854,8 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Property Name="typeId" Type="Int32" Nullable="false" />
           <Property Name="heureDecision" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="heureImpactEffectif" Type="DateTime" Precision="3" />
-          <Property Name="heureImpactEspeere" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="description" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="heureImpactEspere" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_TYPE_REPONSE" Relationship="Self.FK_tbl_REPONSE_tbl_TYPE_REPONSE" FromRole="tbl_REPONSE" ToRole="tbl_TYPE_REPONSE" />
           <NavigationProperty Name="tbl_RESSOURCES_AFFECTEES" Relationship="Self.FK_tbl_RESSOURCES_AFFECTEES_tbl_REPONSE" FromRole="tbl_REPONSE" ToRole="tbl_RESSOURCES_AFFECTEES" />
         </EntityType>
@@ -3341,7 +3341,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
                 <ScalarProperty Name="typeId" ColumnName="typeId" />
                 <ScalarProperty Name="heureDecision" ColumnName="heureDecision" />
                 <ScalarProperty Name="heureImpactEffectif" ColumnName="heureImpactEffectif" />
-                <ScalarProperty Name="heureImpactEspeere" ColumnName="heureImpactEspeere" />
+                <ScalarProperty Name="heureImpactEspere" ColumnName="heureImpactEspere" />
                 <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>

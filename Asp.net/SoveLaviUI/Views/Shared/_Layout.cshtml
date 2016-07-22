@@ -131,7 +131,7 @@
                         </a>
                         <ul class="treeview-menu">                            
                             <li><a href=@Url.Action("Index","Layers",new{area="Administrator"})><i class="fa fa-circle-o"></i>Tous</a></li>
-                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator", type = "Administrateur" })><i class="fa fa-circle-o"></i>Ajouter</a></li>
+                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator"})><i class="fa fa-circle-o"></i>Ajouter</a></li>
                             
                         </ul>
                     </li>
@@ -140,8 +140,8 @@
                             <i class="fa fa-users"></i> <span>Reponses</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href=@Url.Action("Index","Reponses",new{area="Operation"})><i class="fa fa-circle-o"></i>Toutes les rep</a></li>
-                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator", type = "Administrateur" })><i class="fa fa-circle-o"></i>Ajouter</a></li>
+                            <li><a href=@Url.Action("Index","Reponses",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Réponses</a></li>
+                            <li><a href=@Url.Action("Create", "Reponses", new { area = "Operation"})><i class="fa fa-circle-o"></i>Définir Réponses</a></li>
 
                         </ul>
                     </li>
@@ -151,7 +151,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href=@Url.Action("Index","Map",new{area="Administrator"})><i class="fa fa-circle-o"></i>Carte</a></li>
-                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator", type = "Administrateur" })><i class="fa fa-circle-o"></i>Ajouter</a></li>
+                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator"})><i class="fa fa-circle-o"></i>Ajouter</a></li>
 
                         </ul>
                     </li>

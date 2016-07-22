@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0549c78465c648b982678475a81bbe27" Name="Diagram1">
+      <Diagram DiagramId="07e7b04440a744b9bf60aa2f47a29a63" Name="Diagram1">
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ALERTE" Width="1.5" PointX="15" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_CARACTERISTIQUE_MENACE" Width="1.5" PointX="17" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COLLECTIVITE_TERRITORIALE" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />

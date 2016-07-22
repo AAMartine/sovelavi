@@ -25,4 +25,3 @@ C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\
 C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.dll
 C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.pdb
-C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache

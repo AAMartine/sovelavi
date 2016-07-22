@@ -24,8 +24,8 @@ namespace BOL
         public int typeId { get; set; }
         public System.DateTime heureDecision { get; set; }
         public Nullable<System.DateTime> heureImpactEffectif { get; set; }
-        public System.DateTime heureImpactEspeere { get; set; }
-        public byte[] description { get; set; }
+        public System.DateTime heureImpactEspere { get; set; }
+        public string description { get; set; }
     
         public virtual tbl_TYPE_REPONSE tbl_TYPE_REPONSE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -304,8 +304,8 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Property Name="typeId" Type="int" Nullable="false" />
     <Property Name="heureDecision" Type="datetime" Nullable="false" />
     <Property Name="heureImpactEffectif" Type="datetime" />
-    <Property Name="heureImpactEspeere" Type="datetime" Nullable="false" />
-    <Property Name="description" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="heureImpactEspere" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_RESSOURCE">
     <Key>
