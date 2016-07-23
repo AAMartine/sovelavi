@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SoveLaviModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="tbl_ACCESSIBILITE.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ACCESS_HISTORIQUE.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_ALERTE.cs">
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +99,9 @@
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_DONNEE.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_EVAL_REPONSE.cs">
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_EVENEMENT.cs">
@@ -128,10 +137,19 @@
     <Compile Include="tbl_MENACE_INTENSITE.cs">
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_MOYEN_ACCES.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_NIVEAU.cs">
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_NIVEAU_ACCES.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_NIVEAU_ALERTE.cs">
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_NIVEAU_RESOLUTION.cs">
       <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_PERIODE.cs">

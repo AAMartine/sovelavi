@@ -17,6 +17,7 @@ namespace BOL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_COLLECTIVITE_TERRITORIALE()
         {
+            this.tbl_ACCESSIBILITE = new HashSet<tbl_ACCESSIBILITE>();
             this.tbl_COU = new HashSet<tbl_COU>();
             this.tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE = new HashSet<tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE>();
             this.tbl_EVENEMENT_TYPE_DEGAT = new HashSet<tbl_EVENEMENT_TYPE_DEGAT>();
@@ -30,6 +31,8 @@ namespace BOL
         public Nullable<int> communeId { get; set; }
         public Nullable<int> sectId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_ACCESSIBILITE> tbl_ACCESSIBILITE { get; set; }
         public virtual tbl_COMMUNE tbl_COMMUNE { get; set; }
         public virtual tbl_DEPARTEMENT tbl_DEPARTEMENT { get; set; }
         public virtual tbl_NIVEAU tbl_NIVEAU { get; set; }

@@ -1,6 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SOVELAVIDBModelStoreContainer" CdmEntityContainer="SOVELAVIDBEntities">
+    <EntitySetMapping Name="tbl_ACCESS_HISTORIQUE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_ACCESS_HISTORIQUE">
+        <MappingFragment StoreEntitySet="tbl_ACCESS_HISTORIQUE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accessID" ColumnName="accessID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ACCESSIBILITE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_ACCESSIBILITE">
+        <MappingFragment StoreEntitySet="tbl_ACCESSIBILITE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="niveauId" ColumnName="niveauId" />
+          <ScalarProperty Name="moyenId" ColumnName="moyenId" />
+          <ScalarProperty Name="collectiviteId" ColumnName="collectiviteId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_ALERTE">
       <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_ALERTE">
         <MappingFragment StoreEntitySet="tbl_ALERTE">
@@ -109,6 +130,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EVAL_REPONSE">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_EVAL_REPONSE">
+        <MappingFragment StoreEntitySet="tbl_EVAL_REPONSE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="reponseId" ColumnName="reponseId" />
+          <ScalarProperty Name="niveauId" ColumnName="niveauId" />
+          <ScalarProperty Name="commentaires" ColumnName="commentaires" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_EVENEMENT">
       <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_EVENEMENT">
         <MappingFragment StoreEntitySet="tbl_EVENEMENT">
@@ -141,6 +172,7 @@
           <ScalarProperty Name="typeDegatId" ColumnName="typeDegatId" />
           <ScalarProperty Name="evenementId" ColumnName="evenementId" />
           <ScalarProperty Name="valeur" ColumnName="valeur" />
+          <ScalarProperty Name="nbreFamilleAffectee" ColumnName="nbreFamilleAffectee" />
           <ScalarProperty Name="collectiviteId" ColumnName="collectiviteId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -227,9 +259,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MOYEN_ACCES">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_MOYEN_ACCES">
+        <MappingFragment StoreEntitySet="tbl_MOYEN_ACCES">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="moyen" ColumnName="moyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_NIVEAU">
       <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_NIVEAU">
         <MappingFragment StoreEntitySet="tbl_NIVEAU">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NIVEAU_ACCES">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_NIVEAU_ACCES">
+        <MappingFragment StoreEntitySet="tbl_NIVEAU_ACCES">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nom" ColumnName="nom" />
         </MappingFragment>
@@ -241,6 +289,15 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nom" ColumnName="nom" />
           <ScalarProperty Name="levelNumber" ColumnName="levelNumber" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_NIVEAU_RESOLUTION">
+      <EntityTypeMapping TypeName="SOVELAVIDBModel.tbl_NIVEAU_RESOLUTION">
+        <MappingFragment StoreEntitySet="tbl_NIVEAU_RESOLUTION">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomNiveau" ColumnName="nomNiveau" />
           <ScalarProperty Name="description" ColumnName="description" />
         </MappingFragment>
       </EntityTypeMapping>

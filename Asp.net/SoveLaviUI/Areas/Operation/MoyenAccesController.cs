@@ -8,114 +8,109 @@ using System.Web;
 using System.Web.Mvc;
 using BOL;
 
-namespace SoveLaviUI.Areas.Operation.Controllers
+namespace SoveLaviUI.Areas.Operation
 {
-    public class ReponsesController : Controller
+    public class MoyenAccesController : Controller
     {
         private SOVELAVIDBEntities db = new SOVELAVIDBEntities();
 
-        // GET: Operation/Reponses
+        // GET: Operation/MoyenAcces
         public ActionResult Index()
         {
-            var tbl_REPONSE = db.tbl_REPONSE.Include(t => t.tbl_TYPE_REPONSE);
-            return View(tbl_REPONSE.ToList());
+            return View(db.tbl_MOYEN_ACCES.ToList());
         }
 
-        // GET: Operation/Reponses/Details/5
+        // GET: Operation/MoyenAcces/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_REPONSE tbl_REPONSE = db.tbl_REPONSE.Find(id);
-            if (tbl_REPONSE == null)
+            tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
+            if (tbl_MOYEN_ACCES == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_REPONSE);
+            return View(tbl_MOYEN_ACCES);
         }
 
-        // GET: Operation/Reponses/Create
+        // GET: Operation/MoyenAcces/Create
         public ActionResult Create()
         {
-            ViewBag.typeId = new SelectList(db.tbl_TYPE_REPONSE, "id", "nom");
             return View();
         }
 
-        // POST: Operation/Reponses/Create
+        // POST: Operation/MoyenAcces/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,typeId,heureDecision,heureImpactEffectif,heureImpactEspeere,description")] tbl_REPONSE tbl_REPONSE)
+        public ActionResult Create([Bind(Include = "id,moyen")] tbl_MOYEN_ACCES tbl_MOYEN_ACCES)
         {
             if (ModelState.IsValid)
             {
-                db.tbl_REPONSE.Add(tbl_REPONSE);
+                db.tbl_MOYEN_ACCES.Add(tbl_MOYEN_ACCES);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.typeId = new SelectList(db.tbl_TYPE_REPONSE, "id", "nom", tbl_REPONSE.typeId);
-            return View(tbl_REPONSE);
+            return View(tbl_MOYEN_ACCES);
         }
 
-        // GET: Operation/Reponses/Edit/5
+        // GET: Operation/MoyenAcces/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_REPONSE tbl_REPONSE = db.tbl_REPONSE.Find(id);
-            if (tbl_REPONSE == null)
+            tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
+            if (tbl_MOYEN_ACCES == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.typeId = new SelectList(db.tbl_TYPE_REPONSE, "id", "nom", tbl_REPONSE.typeId);
-            return View(tbl_REPONSE);
+            return View(tbl_MOYEN_ACCES);
         }
 
-        // POST: Operation/Reponses/Edit/5
+        // POST: Operation/MoyenAcces/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,typeId,heureDecision,heureImpactEffectif,heureImpactEspeere,description")] tbl_REPONSE tbl_REPONSE)
+        public ActionResult Edit([Bind(Include = "id,moyen")] tbl_MOYEN_ACCES tbl_MOYEN_ACCES)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tbl_REPONSE).State = EntityState.Modified;
+                db.Entry(tbl_MOYEN_ACCES).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.typeId = new SelectList(db.tbl_TYPE_REPONSE, "id", "nom", tbl_REPONSE.typeId);
-            return View(tbl_REPONSE);
+            return View(tbl_MOYEN_ACCES);
         }
 
-        // GET: Operation/Reponses/Delete/5
+        // GET: Operation/MoyenAcces/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_REPONSE tbl_REPONSE = db.tbl_REPONSE.Find(id);
-            if (tbl_REPONSE == null)
+            tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
+            if (tbl_MOYEN_ACCES == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_REPONSE);
+            return View(tbl_MOYEN_ACCES);
         }
 
-        // POST: Operation/Reponses/Delete/5
+        // POST: Operation/MoyenAcces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tbl_REPONSE tbl_REPONSE = db.tbl_REPONSE.Find(id);
-            db.tbl_REPONSE.Remove(tbl_REPONSE);
+            tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
+            db.tbl_MOYEN_ACCES.Remove(tbl_MOYEN_ACCES);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

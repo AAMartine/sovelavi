@@ -25,6 +25,8 @@ namespace BOL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<tbl_ACCESS_HISTORIQUE> tbl_ACCESS_HISTORIQUE { get; set; }
+        public virtual DbSet<tbl_ACCESSIBILITE> tbl_ACCESSIBILITE { get; set; }
         public virtual DbSet<tbl_ALERTE> tbl_ALERTE { get; set; }
         public virtual DbSet<tbl_CARACTERISTIQUE_MENACE> tbl_CARACTERISTIQUE_MENACE { get; set; }
         public virtual DbSet<tbl_COLLECTIVITE_TERRITORIALE> tbl_COLLECTIVITE_TERRITORIALE { get; set; }
@@ -34,6 +36,7 @@ namespace BOL
         public virtual DbSet<tbl_COU_ACTIVATION_HISTORY> tbl_COU_ACTIVATION_HISTORY { get; set; }
         public virtual DbSet<tbl_DEPARTEMENT> tbl_DEPARTEMENT { get; set; }
         public virtual DbSet<tbl_DONNEE> tbl_DONNEE { get; set; }
+        public virtual DbSet<tbl_EVAL_REPONSE> tbl_EVAL_REPONSE { get; set; }
         public virtual DbSet<tbl_EVENEMENT> tbl_EVENEMENT { get; set; }
         public virtual DbSet<tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE> tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE { get; set; }
         public virtual DbSet<tbl_EVENEMENT_TYPE_DEGAT> tbl_EVENEMENT_TYPE_DEGAT { get; set; }
@@ -45,8 +48,11 @@ namespace BOL
         public virtual DbSet<tbl_MEMBRE> tbl_MEMBRE { get; set; }
         public virtual DbSet<tbl_MENACE> tbl_MENACE { get; set; }
         public virtual DbSet<tbl_MENACE_INTENSITE> tbl_MENACE_INTENSITE { get; set; }
+        public virtual DbSet<tbl_MOYEN_ACCES> tbl_MOYEN_ACCES { get; set; }
         public virtual DbSet<tbl_NIVEAU> tbl_NIVEAU { get; set; }
+        public virtual DbSet<tbl_NIVEAU_ACCES> tbl_NIVEAU_ACCES { get; set; }
         public virtual DbSet<tbl_NIVEAU_ALERTE> tbl_NIVEAU_ALERTE { get; set; }
+        public virtual DbSet<tbl_NIVEAU_RESOLUTION> tbl_NIVEAU_RESOLUTION { get; set; }
         public virtual DbSet<tbl_PERIODE> tbl_PERIODE { get; set; }
         public virtual DbSet<tbl_PHOTO> tbl_PHOTO { get; set; }
         public virtual DbSet<tbl_POI> tbl_POI { get; set; }

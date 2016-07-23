@@ -4,55 +4,65 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="07e7b04440a744b9bf60aa2f47a29a63" Name="Diagram1">
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ALERTE" Width="1.5" PointX="15" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_CARACTERISTIQUE_MENACE" Width="1.5" PointX="17" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COLLECTIVITE_TERRITORIALE" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COMMUNE" Width="1.5" PointX="3" PointY="23" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_CONTACT" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU" Width="1.5" PointX="9.75" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU_ACTIVATION_HISTORY" Width="1.5" PointX="12" PointY="28.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_DEPARTEMENT" Width="1.5" PointX="0.75" PointY="18.875" IsExpanded="true" />
+      <Diagram DiagramId="5072b5cf1fad4edab97e9bf72c351773" Name="Diagram1">
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ACCESS_HISTORIQUE" Width="1.5" PointX="12" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ACCESSIBILITE" Width="1.5" PointX="9.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ALERTE" Width="1.5" PointX="15" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_CARACTERISTIQUE_MENACE" Width="1.5" PointX="10" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COLLECTIVITE_TERRITORIALE" Width="1.5" PointX="7.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COMMUNE" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_CONTACT" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU" Width="1.5" PointX="12.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_COU_ACTIVATION_HISTORY" Width="1.5" PointX="15" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_DEPARTEMENT" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_DONNEE" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT" Width="1.5" PointX="10.5" PointY="32" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE" Width="1.5" PointX="10.75" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT_TYPE_DEGAT" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVAL_REPONSE" Width="1.5" PointX="18" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE" Width="1.5" PointX="9.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_EVENEMENT_TYPE_DEGAT" Width="1.5" PointX="10.75" PointY="27.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_FIABILITE_SOURCE" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_INSTITUTION" Width="1.5" PointX="12.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER" Width="1.5" PointX="5" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_CATEGORY" Width="1.5" PointX="2.75" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_TYPE" Width="1.5" PointX="2.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MEMBRE" Width="1.5" PointX="15" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MENACE" Width="1.5" PointX="10.5" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MENACE_INTENSITE" Width="1.5" PointX="19.25" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU_ALERTE" Width="1.5" PointX="12.75" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PERIODE" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_INSTITUTION" Width="1.5" PointX="15.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_CATEGORY" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_LAYER_TYPE" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MEMBRE" Width="1.5" PointX="18" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MENACE" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MENACE_INTENSITE" Width="1.5" PointX="12.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_MOYEN_ACCES" Width="1.5" PointX="7.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU_ACCES" Width="1.5" PointX="7.5" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU_ALERTE" Width="1.5" PointX="12.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_NIVEAU_RESOLUTION" Width="1.5" PointX="15.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PERIODE" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PHOTO" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI" Width="1.5" PointX="13.5" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI_TYPE" Width="1.5" PointX="11.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI" Width="1.5" PointX="16.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI_TYPE" Width="1.5" PointX="14.25" PointY="38.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PRIORITE_DONNEE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PRIORITE_EVENEMENT" Width="1.5" PointX="8.25" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_REPONSE" Width="1.5" PointX="15.75" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE" Width="1.5" PointX="13.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE_TYPE" Width="1.5" PointX="11.5" PointY="39.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCES_AFFECTEES" Width="1.5" PointX="18" PointY="19.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ROLE" Width="1.5" PointX="13.75" PointY="31.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_SECTION_COMMUNALE" Width="1.5" PointX="5.25" PointY="23.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_SEXE" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_PRIORITE_EVENEMENT" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_REPONSE" Width="1.5" PointX="15.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE" Width="1.5" PointX="12.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCE_TYPE" Width="1.5" PointX="10.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_RESSOURCES_AFFECTEES" Width="1.5" PointX="18" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_ROLE" Width="1.5" PointX="13.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_SECTION_COMMUNALE" Width="1.5" PointX="5.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_SEXE" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TAG" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_DEGAT" Width="1.5" PointX="10.5" PointY="36.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_EVENEMENT" Width="1.5" PointX="8.25" PointY="34.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_INSTITUTION" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_MENACE" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_REPONSE" Width="1.5" PointX="13.5" PointY="34.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_UNITE_REFERENCE" Width="1.5" PointX="14.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER_ROLE_COU" Width="1.5" PointX="16" PointY="23.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE" Width="1.5" PointX="12.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_HISTORIQUE" Width="1.5" PointX="8.25" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_NIVEAU" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI_MENACE_VULNERABILITE" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_DEGAT" Width="1.5" PointX="8.5" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_EVENEMENT" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_INSTITUTION" Width="1.5" PointX="13.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_MENACE" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_TYPE_REPONSE" Width="1.5" PointX="13.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_UNITE_REFERENCE" Width="1.5" PointX="7.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER" Width="1.5" PointX="10.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_USER_ROLE_COU" Width="1.5" PointX="16" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE" Width="1.5" PointX="13.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_HISTORIQUE" Width="1.5" PointX="8.25" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_VULNERABILITE_NIVEAU" Width="1.5" PointX="11.5" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SOVELAVIDBModel.tbl_POI_MENACE_VULNERABILITE" Width="1.5" PointX="18.75" PointY="26.25" IsExpanded="true" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ACCESS_HISTORIQUE_tbl_ACCESSIBILITE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ACCESSIBILITE_tbl_COLLECTIVITE_TERRITORIALE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ACCESSIBILITE_tbl_MOYEN_ACCES" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ACCESSIBILITE_tbl_NIVEAU_ACCES" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ALERTE_tbl_COU" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ALERTE_tbl_NIVEAU_ALERTE" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_ALERTE_tbl_USER" ManuallyRouted="false" />
@@ -81,6 +91,8 @@
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_USER_ROLE_COU_tbl_COU" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_DONNEE_tbl_FIABILITE_SOURCE" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_DONNEE_tbl_PRIORITE_DONNEE" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVAL_REPONSE_tbl_NIVEAU_RESOLUTION" ManuallyRouted="false" />
+        <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVAL_REPONSE_tbl_REPONSE" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE_tbl_EVENEMENT" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_tbl_MENACE" ManuallyRouted="false" />
         <AssociationConnector Association="SOVELAVIDBModel.FK_tbl_EVENEMENT_tbl_PRIORITE_EVENEMENT" ManuallyRouted="false" />

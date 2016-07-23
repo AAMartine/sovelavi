@@ -1,0 +1,43 @@
+﻿@model BOL.tbl_EVAL_REPONSE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_EVAL_REPONSE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.commentaires)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commentaires)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_NIVEAU_RESOLUTION.nomNiveau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_NIVEAU_RESOLUTION.nomNiveau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_REPONSE.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_REPONSE.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

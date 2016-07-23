@@ -1,0 +1,51 @@
+﻿@model BOL.tbl_ACCESSIBILITE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_ACCESSIBILITE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_MOYEN_ACCES.moyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_MOYEN_ACCES.moyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_NIVEAU_ACCES.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_NIVEAU_ACCES.nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
