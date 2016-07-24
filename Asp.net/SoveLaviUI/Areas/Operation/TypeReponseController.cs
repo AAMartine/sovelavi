@@ -14,26 +14,26 @@ namespace SoveLaviUI.Areas.Operation
     {
         private SOVELAVIDBEntities db = new SOVELAVIDBEntities();
 
-        // GET: Operation/TypeReponse
+        //GET: Operation/TypeReponse
         public ActionResult Index()
         {
             return View(db.tbl_TYPE_REPONSE.ToList());
         }
 
         // GET: Operation/TypeReponse/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            tbl_TYPE_REPONSE tbl_TYPE_REPONSE = db.tbl_TYPE_REPONSE.Find(id);
-            if (tbl_TYPE_REPONSE == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbl_TYPE_REPONSE);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    tbl_TYPE_REPONSE tbl_TYPE_REPONSE = db.tbl_TYPE_REPONSE.Find(id);
+        //    if (tbl_TYPE_REPONSE == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(tbl_TYPE_REPONSE);
+        //}
 
         // GET: Operation/TypeReponse/Create
         public ActionResult Create()
@@ -50,11 +50,19 @@ namespace SoveLaviUI.Areas.Operation
         {
             if (ModelState.IsValid)
             {
-                db.tbl_TYPE_REPONSE.Add(tbl_TYPE_REPONSE);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.tbl_TYPE_REPONSE.Add(tbl_TYPE_REPONSE);
+                    db.SaveChanges();
+                    TempData["Msg"] = "Créé avec succès";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Création echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
             }
-
             return View(tbl_TYPE_REPONSE);
         }
 
@@ -82,9 +90,18 @@ namespace SoveLaviUI.Areas.Operation
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tbl_TYPE_REPONSE).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Entry(tbl_TYPE_REPONSE).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["Msg"] = "Modifié avec succès";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Modification echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
             }
             return View(tbl_TYPE_REPONSE);
         }
@@ -96,12 +113,14 @@ namespace SoveLaviUI.Areas.Operation
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_TYPE_REPONSE tbl_TYPE_REPONSE = db.tbl_TYPE_REPONSE.Find(id);
-            if (tbl_TYPE_REPONSE == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbl_TYPE_REPONSE);
+            
+                tbl_TYPE_REPONSE tbl_TYPE_REPONSE = db.tbl_TYPE_REPONSE.Find(id);
+                if (tbl_TYPE_REPONSE == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(tbl_TYPE_REPONSE);
+            
         }
 
         // POST: Operation/TypeReponse/Delete/5
@@ -110,9 +129,19 @@ namespace SoveLaviUI.Areas.Operation
         public ActionResult DeleteConfirmed(int id)
         {
             tbl_TYPE_REPONSE tbl_TYPE_REPONSE = db.tbl_TYPE_REPONSE.Find(id);
-            db.tbl_TYPE_REPONSE.Remove(tbl_TYPE_REPONSE);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+                
+            try
+            {
+                db.tbl_TYPE_REPONSE.Remove(tbl_TYPE_REPONSE);
+                db.SaveChanges();
+                TempData["Msg"] = "Supprimé avec succès";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e1)
+                {
+                TempData["Msg"] = "Suppression echouée: " +e1.Message;
+                return RedirectToAction("Index");
+            }
         }
 
         protected override void Dispose(bool disposing)
