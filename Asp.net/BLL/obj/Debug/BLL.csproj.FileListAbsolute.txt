@@ -20,3 +20,14 @@ C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BLL\bin\Debug\EntityFramew
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BLL\obj\Debug\BLL.dll
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BLL\obj\Debug\BLL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\BLL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\BLL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\BOL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\DAL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\EntityFramework.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\BOL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\DAL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\bin\Debug\EntityFramework.xml
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\obj\Debug\BLL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BLL\obj\Debug\BLL.pdb

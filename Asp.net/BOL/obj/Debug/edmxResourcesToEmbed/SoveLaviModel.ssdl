@@ -1,5 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SOVELAVIDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_ACCESS_HISTORIQUE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="accessID" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ACCESSIBILITE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="niveauId" Type="int" Nullable="false" />
+    <Property Name="moyenId" Type="int" Nullable="false" />
+    <Property Name="collectiviteId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="tbl_ALERTE">
     <Key>
       <PropertyRef Name="id" />
@@ -25,7 +44,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="niveauId" Type="int" Nullable="false" />
     <Property Name="deptId" Type="int" />
     <Property Name="communeId" Type="int" />
@@ -107,6 +126,15 @@
     <Property Name="photoId" Type="int" Nullable="false" />
     <Property Name="donneId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="tbl_EVAL_REPONSE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reponseId" Type="int" Nullable="false" />
+    <Property Name="niveauId" Type="int" Nullable="false" />
+    <Property Name="commentaires" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="tbl_EVENEMENT">
     <Key>
       <PropertyRef Name="id" />
@@ -126,7 +154,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="evementId" Type="int" Nullable="false" />
     <Property Name="collectiviteId" Type="int" Nullable="false" />
   </EntityType>
@@ -134,10 +162,11 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="typeDegatId" Type="int" Nullable="false" />
     <Property Name="evenementId" Type="int" Nullable="false" />
     <Property Name="valeur" Type="int" Nullable="false" />
+    <Property Name="nbreFamilleAffectee" Type="int" />
     <Property Name="collectiviteId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_FIABILITE_SOURCE">
@@ -214,11 +243,25 @@
     <Property Name="valeurCaracteristique" Type="float" Nullable="false" />
     <Property Name="periodeId" Type="int" />
   </EntityType>
+  <EntityType Name="tbl_MOYEN_ACCES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="moyen" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="tbl_NIVEAU">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_NIVEAU_ACCES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_NIVEAU_ALERTE">
@@ -229,6 +272,14 @@
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="levelNumber" Type="int" Nullable="false" />
     <Property Name="description" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="tbl_NIVEAU_RESOLUTION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomNiveau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_PERIODE">
     <Key>
@@ -300,18 +351,18 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="typeId" Type="int" Nullable="false" />
     <Property Name="heureDecision" Type="datetime" Nullable="false" />
     <Property Name="heureImpactEffectif" Type="datetime" />
-    <Property Name="heureImpactEspeere" Type="datetime" Nullable="false" />
-    <Property Name="description" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="heureImpactEspere" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_RESSOURCE">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="typeRessourceId" Type="int" Nullable="false" />
     <Property Name="qteDisponible" Type="int" Nullable="false" />
@@ -322,14 +373,14 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_RESSOURCES_AFFECTEES">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="qteAffectee" Type="int" Nullable="false" />
     <Property Name="reponseId" Type="int" Nullable="false" />
     <Property Name="sourceId" Type="int" Nullable="false" />
@@ -377,7 +428,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_TYPE_EVENEMENT">
@@ -406,7 +457,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_UNITE_REFERENCE">
@@ -468,6 +519,54 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Property Name="nom" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="100" />
   </EntityType>
+  <Association Name="FK_tbl_ACCESS_HISTORIQUE_tbl_ACCESSIBILITE">
+    <End Role="tbl_ACCESSIBILITE" Type="Self.tbl_ACCESSIBILITE" Multiplicity="1" />
+    <End Role="tbl_ACCESS_HISTORIQUE" Type="Self.tbl_ACCESS_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ACCESSIBILITE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ACCESS_HISTORIQUE">
+        <PropertyRef Name="accessID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ACCESSIBILITE_tbl_COLLECTIVITE_TERRITORIALE">
+    <End Role="tbl_COLLECTIVITE_TERRITORIALE" Type="Self.tbl_COLLECTIVITE_TERRITORIALE" Multiplicity="1" />
+    <End Role="tbl_ACCESSIBILITE" Type="Self.tbl_ACCESSIBILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COLLECTIVITE_TERRITORIALE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ACCESSIBILITE">
+        <PropertyRef Name="collectiviteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ACCESSIBILITE_tbl_MOYEN_ACCES">
+    <End Role="tbl_MOYEN_ACCES" Type="Self.tbl_MOYEN_ACCES" Multiplicity="1" />
+    <End Role="tbl_ACCESSIBILITE" Type="Self.tbl_ACCESSIBILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MOYEN_ACCES">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ACCESSIBILITE">
+        <PropertyRef Name="moyenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ACCESSIBILITE_tbl_NIVEAU_ACCES">
+    <End Role="tbl_NIVEAU_ACCES" Type="Self.tbl_NIVEAU_ACCES" Multiplicity="1" />
+    <End Role="tbl_ACCESSIBILITE" Type="Self.tbl_ACCESSIBILITE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_NIVEAU_ACCES">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ACCESSIBILITE">
+        <PropertyRef Name="niveauId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tbl_ALERTE_tbl_COU">
     <End Role="tbl_COU" Type="Self.tbl_COU" Multiplicity="0..1" />
     <End Role="tbl_ALERTE" Type="Self.tbl_ALERTE" Multiplicity="*" />
@@ -669,6 +768,30 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
       </Principal>
       <Dependent Role="tbl_DONNEE">
         <PropertyRef Name="prioriteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EVAL_REPONSE_tbl_NIVEAU_RESOLUTION">
+    <End Role="tbl_NIVEAU_RESOLUTION" Type="Self.tbl_NIVEAU_RESOLUTION" Multiplicity="1" />
+    <End Role="tbl_EVAL_REPONSE" Type="Self.tbl_EVAL_REPONSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_NIVEAU_RESOLUTION">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVAL_REPONSE">
+        <PropertyRef Name="niveauId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EVAL_REPONSE_tbl_REPONSE">
+    <End Role="tbl_REPONSE" Type="Self.tbl_REPONSE" Multiplicity="1" />
+    <End Role="tbl_EVAL_REPONSE" Type="Self.tbl_EVAL_REPONSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_REPONSE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_EVAL_REPONSE">
+        <PropertyRef Name="reponseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1116,6 +1239,18 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+    <End Role="tbl_COMMUNE" Type="Self.tbl_COMMUNE" Multiplicity="1" />
+    <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_COMMUNE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VULNERABILITE_HISTORIQUE">
+        <PropertyRef Name="communeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
     <End Role="tbl_MENACE" Type="Self.tbl_MENACE" Multiplicity="1" />
     <End Role="tbl_VULNERABILITE_HISTORIQUE" Type="Self.tbl_VULNERABILITE_HISTORIQUE" Multiplicity="*" />
@@ -1177,6 +1312,8 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SOVELAVIDBModelStoreContainer">
+    <EntitySet Name="tbl_ACCESS_HISTORIQUE" EntityType="Self.tbl_ACCESS_HISTORIQUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ACCESSIBILITE" EntityType="Self.tbl_ACCESSIBILITE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_ALERTE" EntityType="Self.tbl_ALERTE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_CARACTERISTIQUE_MENACE" EntityType="Self.tbl_CARACTERISTIQUE_MENACE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_COLLECTIVITE_TERRITORIALE" EntityType="Self.tbl_COLLECTIVITE_TERRITORIALE" Schema="dbo" store:Type="Tables" />
@@ -1187,6 +1324,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <EntitySet Name="tbl_DEPARTEMENT" EntityType="Self.tbl_DEPARTEMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_DONNEE" EntityType="Self.tbl_DONNEE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_DONNEE_PHOTO" EntityType="Self.tbl_DONNEE_PHOTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EVAL_REPONSE" EntityType="Self.tbl_EVAL_REPONSE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_EVENEMENT" EntityType="Self.tbl_EVENEMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE" EntityType="Self.tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_EVENEMENT_TYPE_DEGAT" EntityType="Self.tbl_EVENEMENT_TYPE_DEGAT" Schema="dbo" store:Type="Tables" />
@@ -1198,8 +1336,11 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <EntitySet Name="tbl_MEMBRE" EntityType="Self.tbl_MEMBRE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_MENACE" EntityType="Self.tbl_MENACE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_MENACE_INTENSITE" EntityType="Self.tbl_MENACE_INTENSITE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_MOYEN_ACCES" EntityType="Self.tbl_MOYEN_ACCES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NIVEAU" EntityType="Self.tbl_NIVEAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NIVEAU_ACCES" EntityType="Self.tbl_NIVEAU_ACCES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NIVEAU_ALERTE" EntityType="Self.tbl_NIVEAU_ALERTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NIVEAU_RESOLUTION" EntityType="Self.tbl_NIVEAU_RESOLUTION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_PERIODE" EntityType="Self.tbl_PERIODE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_PHOTO" EntityType="Self.tbl_PHOTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_POI" EntityType="Self.tbl_POI" Schema="dbo" store:Type="Tables" />
@@ -1233,6 +1374,22 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     [tbl_POI_MENACE_VULNERABILITE].[niveauVulnerabiliteId] AS [niveauVulnerabiliteId]
     FROM [dbo].[tbl_POI_MENACE_VULNERABILITE] AS [tbl_POI_MENACE_VULNERABILITE]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_tbl_ACCESS_HISTORIQUE_tbl_ACCESSIBILITE" Association="Self.FK_tbl_ACCESS_HISTORIQUE_tbl_ACCESSIBILITE">
+      <End Role="tbl_ACCESSIBILITE" EntitySet="tbl_ACCESSIBILITE" />
+      <End Role="tbl_ACCESS_HISTORIQUE" EntitySet="tbl_ACCESS_HISTORIQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ACCESSIBILITE_tbl_COLLECTIVITE_TERRITORIALE" Association="Self.FK_tbl_ACCESSIBILITE_tbl_COLLECTIVITE_TERRITORIALE">
+      <End Role="tbl_COLLECTIVITE_TERRITORIALE" EntitySet="tbl_COLLECTIVITE_TERRITORIALE" />
+      <End Role="tbl_ACCESSIBILITE" EntitySet="tbl_ACCESSIBILITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ACCESSIBILITE_tbl_MOYEN_ACCES" Association="Self.FK_tbl_ACCESSIBILITE_tbl_MOYEN_ACCES">
+      <End Role="tbl_MOYEN_ACCES" EntitySet="tbl_MOYEN_ACCES" />
+      <End Role="tbl_ACCESSIBILITE" EntitySet="tbl_ACCESSIBILITE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ACCESSIBILITE_tbl_NIVEAU_ACCES" Association="Self.FK_tbl_ACCESSIBILITE_tbl_NIVEAU_ACCES">
+      <End Role="tbl_NIVEAU_ACCES" EntitySet="tbl_NIVEAU_ACCES" />
+      <End Role="tbl_ACCESSIBILITE" EntitySet="tbl_ACCESSIBILITE" />
+    </AssociationSet>
     <AssociationSet Name="FK_tbl_ALERTE_tbl_COU" Association="Self.FK_tbl_ALERTE_tbl_COU">
       <End Role="tbl_COU" EntitySet="tbl_COU" />
       <End Role="tbl_ALERTE" EntitySet="tbl_ALERTE" />
@@ -1300,6 +1457,14 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <AssociationSet Name="FK_tbl_DONNEE_tbl_PRIORITE_DONNEE" Association="Self.FK_tbl_DONNEE_tbl_PRIORITE_DONNEE">
       <End Role="tbl_PRIORITE_DONNEE" EntitySet="tbl_PRIORITE_DONNEE" />
       <End Role="tbl_DONNEE" EntitySet="tbl_DONNEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EVAL_REPONSE_tbl_NIVEAU_RESOLUTION" Association="Self.FK_tbl_EVAL_REPONSE_tbl_NIVEAU_RESOLUTION">
+      <End Role="tbl_NIVEAU_RESOLUTION" EntitySet="tbl_NIVEAU_RESOLUTION" />
+      <End Role="tbl_EVAL_REPONSE" EntitySet="tbl_EVAL_REPONSE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EVAL_REPONSE_tbl_REPONSE" Association="Self.FK_tbl_EVAL_REPONSE_tbl_REPONSE">
+      <End Role="tbl_REPONSE" EntitySet="tbl_REPONSE" />
+      <End Role="tbl_EVAL_REPONSE" EntitySet="tbl_EVAL_REPONSE" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE_tbl_COLLECTIVITE_TERRITORIALE" Association="Self.FK_tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE_tbl_COLLECTIVITE_TERRITORIALE">
       <End Role="tbl_COLLECTIVITE_TERRITORIALE" EntitySet="tbl_COLLECTIVITE_TERRITORIALE" />
@@ -1448,6 +1613,10 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <AssociationSet Name="FK_tbl_USER_tbl_SEXE" Association="Self.FK_tbl_USER_tbl_SEXE">
       <End Role="tbl_SEXE" EntitySet="tbl_SEXE" />
       <End Role="tbl_USER" EntitySet="tbl_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_COMMUNE">
+      <End Role="tbl_COMMUNE" EntitySet="tbl_COMMUNE" />
+      <End Role="tbl_VULNERABILITE_HISTORIQUE" EntitySet="tbl_VULNERABILITE_HISTORIQUE" />
     </AssociationSet>
     <AssociationSet Name="FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE" Association="Self.FK_tbl_VULNERABILITE_HISTORIQUE_tbl_MENACE">
       <End Role="tbl_MENACE" EntitySet="tbl_MENACE" />

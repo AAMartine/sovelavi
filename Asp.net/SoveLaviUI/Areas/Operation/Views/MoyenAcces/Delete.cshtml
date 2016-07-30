@@ -1,0 +1,43 @@
+﻿@model BOL.tbl_MOYEN_ACCES
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Voulez-vous effacer cette entrée?</h3>
+                </div>
+                <div class="box-body">
+                    <div>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.moyen)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.moyen)
+                            </dd>
+
+                        </dl>
+                        @using (Html.BeginForm("Delete", "MoyenAcces", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="box-footer">
+                                <input type="submit" value="Effacer" class="btn btn-danger" /> |
+                                @Html.ActionLink("Retourner à la liste", "Index")
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -24,6 +24,7 @@ namespace BOL
         public int typeDegatId { get; set; }
         public int evenementId { get; set; }
         public int valeur { get; set; }
+        public Nullable<int> nbreFamilleAffectee { get; set; }
         public int collectiviteId { get; set; }
     
         public virtual tbl_COLLECTIVITE_TERRITORIALE tbl_COLLECTIVITE_TERRITORIALE { get; set; }

@@ -16,3 +16,13 @@ C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramew
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\obj\Debug\BOL.dll
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\BOL\obj\Debug\BOL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\BOL.dll.config
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\BOL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\BOL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.xml
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.dll
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.pdb
+C:\Users\CLIENT\Documents\Martine\PREMIUM\Projet de Sortie\sovelavi\Asp.net\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
