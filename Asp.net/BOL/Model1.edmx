@@ -30,7 +30,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="niveauId" Type="int" Nullable="false" />
           <Property Name="deptId" Type="int" />
           <Property Name="communeId" Type="int" />
@@ -63,7 +63,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isActive" Type="bit" Nullable="false" />
           <Property Name="latitude" Type="float" Nullable="false" />
@@ -79,7 +79,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="activationStartDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="activationEndDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="couId" Type="int" Nullable="false" />
@@ -158,7 +158,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="type" Type="int" Nullable="false" />
           <Property Name="contactId" Type="int" Nullable="false" />
@@ -196,7 +196,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="institutionId" Type="int" Nullable="false" />
           <Property Name="couId" Type="int" Nullable="false" />
           <Property Name="contactId" Type="int" Nullable="false" />
@@ -223,7 +223,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_NIVEAU_ALERTE">
@@ -316,7 +316,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="typeRessourceId" Type="int" Nullable="false" />
           <Property Name="qteDisponible" Type="int" Nullable="false" />
@@ -327,14 +327,14 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_RESSOURCES_AFFECTEES">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="qteAffectee" Type="int" Nullable="false" />
           <Property Name="reponseId" Type="int" Nullable="false" />
           <Property Name="sourceId" Type="int" Nullable="false" />
@@ -397,7 +397,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_TYPE_MENACE">
@@ -439,7 +439,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="couId" Type="int" Nullable="false" />
           <Property Name="roleId" Type="int" Nullable="false" />
@@ -448,7 +448,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="collectiviteId" Type="int" Nullable="false" />
           <Property Name="menaceId" Type="int" Nullable="false" />
           <Property Name="niveauVulnerabiliteID" Type="int" Nullable="false" />
@@ -458,7 +458,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="communeId" Type="int" Nullable="false" />
           <Property Name="menaceId" Type="int" Nullable="false" />
           <Property Name="niveauVulnerabiliteId" Type="int" Nullable="false" />
@@ -469,7 +469,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="varchar" MaxLength="100" />
         </EntityType>
@@ -1511,7 +1511,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="niveauId" Type="Int32" Nullable="false" />
           <Property Name="deptId" Type="Int32" />
           <Property Name="communeId" Type="Int32" />
@@ -1559,7 +1559,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isActive" Type="Boolean" Nullable="false" />
           <Property Name="latitude" Type="Double" Nullable="false" />
@@ -1582,7 +1582,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="activationStartDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="activationEndDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="couId" Type="Int32" Nullable="false" />
@@ -1672,7 +1672,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="type" Type="Int32" Nullable="false" />
           <Property Name="contactId" Type="Int32" Nullable="false" />
@@ -1717,7 +1717,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="institutionId" Type="Int32" Nullable="false" />
           <Property Name="couId" Type="Int32" Nullable="false" />
           <Property Name="contactId" Type="Int32" Nullable="false" />
@@ -1755,7 +1755,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_COLLECTIVITE_TERRITORIALE" Relationship="Self.FK_tbl_COLLECTIVITE_TERRITORIALE_tbl_NIVEAU" FromRole="tbl_NIVEAU" ToRole="tbl_COLLECTIVITE_TERRITORIALE" />
         </EntityType>
@@ -1846,7 +1846,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="typeRessourceId" Type="Int32" Nullable="false" />
           <Property Name="qteDisponible" Type="Int32" Nullable="false" />
@@ -1860,7 +1860,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_RESSOURCE" Relationship="Self.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" FromRole="tbl_RESSOURCE_TYPE" ToRole="tbl_RESSOURCE" />
         </EntityType>
@@ -1868,7 +1868,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="qteAffectee" Type="Int32" Nullable="false" />
           <Property Name="reponseId" Type="Int32" Nullable="false" />
           <Property Name="sourceId" Type="Int32" Nullable="false" />
@@ -1933,7 +1933,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_INSTITUTION" Relationship="Self.FK_tbl_INSTITUTION_tbl_TYPE_INSTITUTION" FromRole="tbl_TYPE_INSTITUTION" ToRole="tbl_INSTITUTION" />
         </EntityType>
@@ -1986,7 +1986,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="userId" Type="Int32" Nullable="false" />
           <Property Name="couId" Type="Int32" Nullable="false" />
           <Property Name="roleId" Type="Int32" Nullable="false" />
@@ -1998,7 +1998,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="collectiviteId" Type="Int32" Nullable="false" />
           <Property Name="menaceId" Type="Int32" Nullable="false" />
           <Property Name="niveauVulnerabiliteID" Type="Int32" Nullable="false" />
@@ -2011,7 +2011,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="communeId" Type="Int32" Nullable="false" />
           <Property Name="menaceId" Type="Int32" Nullable="false" />
           <Property Name="niveauVulnerabiliteId" Type="Int32" Nullable="false" />
@@ -2024,7 +2024,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbl_VULNERABILITE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_NIVEAU" ToRole="tbl_VULNERABILITE" />

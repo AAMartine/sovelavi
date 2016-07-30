@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="COUBs.cs" />
+    <Compile Include="InstitutionBs.cs" />
+    <Compile Include="MembreBs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RessourceBs.cs" />
+    <Compile Include="VulnerabiliteBs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BOL\BOL.csproj">

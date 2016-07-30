@@ -31,7 +31,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="niveauId" Type="Int32" Nullable="false" />
     <Property Name="deptId" Type="Int32" />
     <Property Name="communeId" Type="Int32" />
@@ -79,7 +79,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="isActive" Type="Boolean" Nullable="false" />
     <Property Name="latitude" Type="Double" Nullable="false" />
@@ -102,7 +102,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="activationStartDate" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="activationEndDate" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="couId" Type="Int32" Nullable="false" />
@@ -192,7 +192,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="type" Type="Int32" Nullable="false" />
     <Property Name="contactId" Type="Int32" Nullable="false" />
@@ -237,7 +237,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="institutionId" Type="Int32" Nullable="false" />
     <Property Name="couId" Type="Int32" Nullable="false" />
     <Property Name="contactId" Type="Int32" Nullable="false" />
@@ -275,7 +275,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="tbl_COLLECTIVITE_TERRITORIALE" Relationship="Self.FK_tbl_COLLECTIVITE_TERRITORIALE_tbl_NIVEAU" FromRole="tbl_NIVEAU" ToRole="tbl_COLLECTIVITE_TERRITORIALE" />
   </EntityType>
@@ -366,7 +366,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="typeRessourceId" Type="Int32" Nullable="false" />
     <Property Name="qteDisponible" Type="Int32" Nullable="false" />
@@ -380,7 +380,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="tbl_RESSOURCE" Relationship="Self.FK_tbl_RESSOURCE_tbl_RESSOURCE_TYPE" FromRole="tbl_RESSOURCE_TYPE" ToRole="tbl_RESSOURCE" />
   </EntityType>
@@ -388,7 +388,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="qteAffectee" Type="Int32" Nullable="false" />
     <Property Name="reponseId" Type="Int32" Nullable="false" />
     <Property Name="sourceId" Type="Int32" Nullable="false" />
@@ -453,7 +453,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="tbl_INSTITUTION" Relationship="Self.FK_tbl_INSTITUTION_tbl_TYPE_INSTITUTION" FromRole="tbl_TYPE_INSTITUTION" ToRole="tbl_INSTITUTION" />
   </EntityType>
@@ -506,7 +506,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="userId" Type="Int32" Nullable="false" />
     <Property Name="couId" Type="Int32" Nullable="false" />
     <Property Name="roleId" Type="Int32" Nullable="false" />
@@ -518,7 +518,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="collectiviteId" Type="Int32" Nullable="false" />
     <Property Name="menaceId" Type="Int32" Nullable="false" />
     <Property Name="niveauVulnerabiliteID" Type="Int32" Nullable="false" />
@@ -531,7 +531,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="communeId" Type="Int32" Nullable="false" />
     <Property Name="menaceId" Type="Int32" Nullable="false" />
     <Property Name="niveauVulnerabiliteId" Type="Int32" Nullable="false" />
@@ -544,7 +544,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tbl_VULNERABILITE" Relationship="Self.FK_tbl_VULNERABILITE_tbl_VULNERABILITE_NIVEAU" FromRole="tbl_VULNERABILITE_NIVEAU" ToRole="tbl_VULNERABILITE" />

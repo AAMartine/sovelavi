@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -223,6 +225,31 @@
     <Content Include="Areas\Administrator\Views\Pois\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Pois\Index.cshtml" />
     <Content Include="Areas\Security\Views\Login\Index.cshtml" />
+    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Create.cshtml" />
+    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Delete.cshtml" />
+    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Details.cshtml" />
+    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Edit.cshtml" />
+    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Index.cshtml" />
+    <Content Include="Areas\DataEntry\Views\RESSOURCE\Create.cshtml" />
+    <Content Include="Areas\DataEntry\Views\RESSOURCE\Delete.cshtml" />
+    <Content Include="Areas\DataEntry\Views\RESSOURCE\Details.cshtml" />
+    <Content Include="Areas\DataEntry\Views\RESSOURCE\Edit.cshtml" />
+    <Content Include="Areas\DataEntry\Views\RESSOURCE\Index.cshtml" />
+    <Content Include="Areas\DataEntry\Views\COU\Create.cshtml" />
+    <Content Include="Areas\DataEntry\Views\COU\Delete.cshtml" />
+    <Content Include="Areas\DataEntry\Views\COU\Details.cshtml" />
+    <Content Include="Areas\DataEntry\Views\COU\Edit.cshtml" />
+    <Content Include="Areas\DataEntry\Views\COU\Index.cshtml" />
+    <Content Include="Areas\DataEntry\Views\INSTITUTION\Create.cshtml" />
+    <Content Include="Areas\DataEntry\Views\INSTITUTION\Delete.cshtml" />
+    <Content Include="Areas\DataEntry\Views\INSTITUTION\Details.cshtml" />
+    <Content Include="Areas\DataEntry\Views\INSTITUTION\Edit.cshtml" />
+    <Content Include="Areas\DataEntry\Views\INSTITUTION\Index.cshtml" />
+    <Content Include="Areas\DataEntry\Views\MEMBRE\Create.cshtml" />
+    <Content Include="Areas\DataEntry\Views\MEMBRE\Delete.cshtml" />
+    <Content Include="Areas\DataEntry\Views\MEMBRE\Details.cshtml" />
+    <Content Include="Areas\DataEntry\Views\MEMBRE\Edit.cshtml" />
+    <Content Include="Areas\DataEntry\Views\MEMBRE\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -238,7 +265,10 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="scripts\ScriptSOVELAVI.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -250,13 +280,18 @@
     <Compile Include="Areas\Administrator\Controllers\PoisController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
+    <Compile Include="Areas\DataEntry\Controllers\COUController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\EvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\FiabiliteSourceController.cs" />
+    <Compile Include="Areas\DataEntry\Controllers\INSTITUTIONController.cs" />
+    <Compile Include="Areas\DataEntry\Controllers\MEMBREController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\MenacesController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\PrioriteEvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\QuickNoteEventsController.cs" />
+    <Compile Include="Areas\DataEntry\Controllers\RESSOURCEController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\TypeEvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\TypeMenacesController.cs" />
+    <Compile Include="Areas\DataEntry\Controllers\VULNERABILITEController.cs" />
     <Compile Include="Areas\DataEntry\DataEntryAreaRegistration.cs" />
     <Compile Include="Areas\Security\Controllers\BaseSecurityController.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
@@ -315,11 +350,15 @@
       <Name>BOL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

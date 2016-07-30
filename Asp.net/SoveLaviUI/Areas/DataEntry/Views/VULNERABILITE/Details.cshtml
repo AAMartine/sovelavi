@@ -1,0 +1,51 @@
+﻿@model BOL.tbl_VULNERABILITE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_VULNERABILITE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.startDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_MENACE.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_MENACE.nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_VULNERABILITE_NIVEAU.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_VULNERABILITE_NIVEAU.nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

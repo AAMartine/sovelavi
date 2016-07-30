@@ -132,3 +132,5 @@ C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\bin\System.Web.
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\bin\System.Web.Mvc.xml
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\obj\Debug\SoveLaviUI.dll
 C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\obj\Debug\SoveLaviUI.pdb
+C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\bin\DAL.dll
+C:\Users\rdorminvil\Documents\GitHub\sovelavi\Asp.net\SoveLaviUI\bin\DAL.pdb
