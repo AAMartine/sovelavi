@@ -1,10 +1,9 @@
-﻿@model BOL.tbl_MOYEN_ACCES
+﻿@model BOL.tbl_NIVEAU_RESOLUTION
 
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <section class="content">
     <div class="row">
@@ -19,17 +18,27 @@
                     <div>
                         <dl class="dl-horizontal">
                             <dt>
-                                Moyen
+                                @Html.DisplayNameFor(model => model.nomNiveau)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.moyen)
+                                @Html.DisplayFor(model => model.nomNiveau)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.description)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.description)
                             </dd>
 
                         </dl>
-                        @using (Html.BeginForm("Delete", "MoyenAcces", FormMethod.Post))
+
+                        @using (Html.BeginForm("Delete","NiveauResolution",FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
+
                             <div class="box-footer">
                                 <input type="submit" value="Effacer" class="btn btn-danger" /> |
                                 @Html.ActionLink("Retourner à la liste", "Index")

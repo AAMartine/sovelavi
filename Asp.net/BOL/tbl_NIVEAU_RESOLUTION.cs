@@ -11,7 +11,7 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_NIVEAU_RESOLUTION
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +21,10 @@ namespace BOL
         }
     
         public int id { get; set; }
+        [Required]
         public string nomNiveau { get; set; }
+        [Required]
         public string description { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EVAL_REPONSE> tbl_EVAL_REPONSE { get; set; }
     }

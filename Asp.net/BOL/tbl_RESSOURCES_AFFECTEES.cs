@@ -11,13 +11,17 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_RESSOURCES_AFFECTEES
     {
         public int id { get; set; }
+        [Required]
         public int qteAffectee { get; set; }
+        [Required]
         public int reponseId { get; set; }
+        [Required]
         public int sourceId { get; set; }
+        [Required]
         public int degatID { get; set; }
     
         public virtual tbl_EVENEMENT_TYPE_DEGAT tbl_EVENEMENT_TYPE_DEGAT { get; set; }

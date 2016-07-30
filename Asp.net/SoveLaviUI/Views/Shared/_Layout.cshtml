@@ -137,13 +137,31 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-users"></i> <span>OPÉRATION</span> <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-share"></i> <span>OPERATIONS</span> 
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href=@Url.Action("Index","Reponses",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Réponses</a></li>
                             <li><a href=@Url.Action("Create", "Reponses", new { area = "Operation"})><i class="fa fa-circle-o"></i>Définir Réponses</a></li>
-
-                        </ul>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> CONFIGURATION <i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a href=@Url.Action("Create","MoyenAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Ajouter Moyen Accès</a></li>
+                                    <li><a href=@Url.Action("Create","NiveauAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Ajouter Niveau Accès</a></li>
+                                    <li><a href=@Url.Action("Create","NiveauResolution",new { area ="Operation"})><i class="fa fa-circle-o"></i>Ajouter Niveau Résolution</a></li>
+                                    <li><a href=@Url.Action("Create","TypeReponse",new { area ="Operation"})><i class="fa fa-circle-o"></i>Ajouter Type Réponse</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i> Lister paramètres <i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href=@Url.Action("Index","MoyenAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Moyen Accès</a></li>
+                                            <li><a href=@Url.Action("Index", "NiveauAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Niveau Accès</a></li>
+                                            <li><a href=@Url.Action("Index","NiveauResolution",new { area ="Operation"})><i class="fa fa-circle-o"></i>Lister Niveau Résolution</a></li>
+                                            <li><a href=@Url.Action("Index", "TypeReponse",new { area ="Operation"})><i class="fa fa-circle-o"></i>Lister Type Réponse</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                              </li>
+                            </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">

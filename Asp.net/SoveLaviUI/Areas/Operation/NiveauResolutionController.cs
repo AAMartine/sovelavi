@@ -10,52 +10,52 @@ using BOL;
 
 namespace SoveLaviUI.Areas.Operation
 {
-    public class NiveauAccesController : Controller
+    public class NiveauResolutionController : Controller
     {
         private SOVELAVIDBEntities db = new SOVELAVIDBEntities();
 
-        // GET: Operation/NiveauAcces
+        // GET: Operation/NiveauResolution
         public ActionResult Index()
         {
-            return View(db.tbl_NIVEAU_ACCES.ToList());
+            return View(db.tbl_NIVEAU_RESOLUTION.ToList());
         }
 
-        // GET: Operation/NiveauAcces/Details/5
+        // GET: Operation/NiveauResolution/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES = db.tbl_NIVEAU_ACCES.Find(id);
-            if (tbl_NIVEAU_ACCES == null)
+            tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION = db.tbl_NIVEAU_RESOLUTION.Find(id);
+            if (tbl_NIVEAU_RESOLUTION == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_NIVEAU_ACCES);
+            return View(tbl_NIVEAU_RESOLUTION);
         }
 
-        // GET: Operation/NiveauAcces/Create
+        // GET: Operation/NiveauResolution/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Operation/NiveauAcces/Create
+        // POST: Operation/NiveauResolution/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nom")] tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES)
+        public ActionResult Create([Bind(Include = "id,nomNiveau,description")] tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    db.tbl_NIVEAU_ACCES.Add(tbl_NIVEAU_ACCES);
-                    db.SaveChanges();
-                    TempData["Msg"] = "Créé avec succès";
-                    return RedirectToAction("Index");
+                     db.tbl_NIVEAU_RESOLUTION.Add(tbl_NIVEAU_RESOLUTION);
+                     db.SaveChanges();
+                     TempData["Msg"] = "Créé avec succès";
+                     return RedirectToAction("Index");
                 }
                 catch (Exception e1)
                 {
@@ -64,36 +64,36 @@ namespace SoveLaviUI.Areas.Operation
                 }
             }
 
-            return View(tbl_NIVEAU_ACCES);
+            return View(tbl_NIVEAU_RESOLUTION);
         }
 
-        // GET: Operation/NiveauAcces/Edit/5
+        // GET: Operation/NiveauResolution/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES = db.tbl_NIVEAU_ACCES.Find(id);
-            if (tbl_NIVEAU_ACCES == null)
+            tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION = db.tbl_NIVEAU_RESOLUTION.Find(id);
+            if (tbl_NIVEAU_RESOLUTION == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_NIVEAU_ACCES);
+            return View(tbl_NIVEAU_RESOLUTION);
         }
 
-        // POST: Operation/NiveauAcces/Edit/5
+        // POST: Operation/NiveauResolution/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nom")] tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES)
+        public ActionResult Edit([Bind(Include = "id,nomNiveau,description")] tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    db.Entry(tbl_NIVEAU_ACCES).State = EntityState.Modified;
+                    db.Entry(tbl_NIVEAU_RESOLUTION).State = EntityState.Modified;
                     db.SaveChanges();
                     TempData["Msg"] = "Modifié avec succès";
                     return RedirectToAction("Index");
@@ -103,34 +103,35 @@ namespace SoveLaviUI.Areas.Operation
                     TempData["Msg"] = "Modification echouée: " + e1.Message;
                     return RedirectToAction("Index");
                 }
+
             }
-            return View(tbl_NIVEAU_ACCES);
+            return View(tbl_NIVEAU_RESOLUTION);
         }
 
-        // GET: Operation/NiveauAcces/Delete/5
+        // GET: Operation/NiveauResolution/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES = db.tbl_NIVEAU_ACCES.Find(id);
-            if (tbl_NIVEAU_ACCES == null)
+            tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION = db.tbl_NIVEAU_RESOLUTION.Find(id);
+            if (tbl_NIVEAU_RESOLUTION == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_NIVEAU_ACCES);
+            return View(tbl_NIVEAU_RESOLUTION);
         }
 
-        // POST: Operation/NiveauAcces/Delete/5
+        // POST: Operation/NiveauResolution/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             try
             {
-                tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES = db.tbl_NIVEAU_ACCES.Find(id);
-                db.tbl_NIVEAU_ACCES.Remove(tbl_NIVEAU_ACCES);
+                tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION = db.tbl_NIVEAU_RESOLUTION.Find(id);
+                db.tbl_NIVEAU_RESOLUTION.Remove(tbl_NIVEAU_RESOLUTION);
                 db.SaveChanges();
                 TempData["Msg"] = "Supprimé avec succès";
                 return RedirectToAction("Index");

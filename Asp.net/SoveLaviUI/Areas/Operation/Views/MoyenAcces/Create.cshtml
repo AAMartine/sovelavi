@@ -20,12 +20,12 @@
                         @Html.AntiForgeryToken()
 
                         <div class="form-horizontal">
-                            @Html.ValidationSummary(true, "Champ Requis", new { @class = "text-danger" })
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
                                 @Html.LabelFor(model => model.moyen, "Moyen", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     @Html.EditorFor(model => model.moyen, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.moyen, "Champ requis", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.moyen, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="box-footer">

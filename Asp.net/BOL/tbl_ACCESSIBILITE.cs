@@ -11,7 +11,7 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_ACCESSIBILITE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +21,13 @@ namespace BOL
         }
     
         public int id { get; set; }
+        [Required]
         public int niveauId { get; set; }
+        [Required]
         public int moyenId { get; set; }
+        [Required]
         public int collectiviteId { get; set; }
+        [Required]
         public System.DateTime StartDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

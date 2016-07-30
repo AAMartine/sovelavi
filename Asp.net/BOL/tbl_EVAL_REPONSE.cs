@@ -11,12 +11,15 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_EVAL_REPONSE
     {
         public int id { get; set; }
+        [Required]
         public int reponseId { get; set; }
+        [Required]
         public int niveauId { get; set; }
+        [Required]
         public string commentaires { get; set; }
     
         public virtual tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION { get; set; }

@@ -50,10 +50,20 @@ namespace SoveLaviUI.Areas.Operation
         {
             if (ModelState.IsValid)
             {
-                db.tbl_MOYEN_ACCES.Add(tbl_MOYEN_ACCES);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.tbl_MOYEN_ACCES.Add(tbl_MOYEN_ACCES);
+                    db.SaveChanges();
+                    TempData["Msg"] = "Créé avec succès";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Création echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
             }
+
 
             return View(tbl_MOYEN_ACCES);
         }
@@ -81,10 +91,19 @@ namespace SoveLaviUI.Areas.Operation
         public ActionResult Edit([Bind(Include = "id,moyen")] tbl_MOYEN_ACCES tbl_MOYEN_ACCES)
         {
             if (ModelState.IsValid)
-            {
-                db.Entry(tbl_MOYEN_ACCES).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                            {
+                try
+                {
+                    db.Entry(tbl_MOYEN_ACCES).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["Msg"] = "Modifié avec succès";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Modification echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
             }
             return View(tbl_MOYEN_ACCES);
         }
@@ -109,10 +128,19 @@ namespace SoveLaviUI.Areas.Operation
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
-            db.tbl_MOYEN_ACCES.Remove(tbl_MOYEN_ACCES);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                tbl_MOYEN_ACCES tbl_MOYEN_ACCES = db.tbl_MOYEN_ACCES.Find(id);
+                db.tbl_MOYEN_ACCES.Remove(tbl_MOYEN_ACCES);
+                db.SaveChanges();
+                TempData["Msg"] = "Supprimé avec succès";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e1)
+            {
+                TempData["Msg"] = "Suppression echouée: " + e1.Message;
+                return RedirectToAction("Index");
+            }
         }
 
         protected override void Dispose(bool disposing)

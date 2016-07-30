@@ -262,6 +262,11 @@
     <Content Include="Areas\Operation\Views\NiveauAcces\Details.cshtml" />
     <Content Include="Areas\Operation\Views\NiveauAcces\Edit.cshtml" />
     <Content Include="Areas\Operation\Views\NiveauAcces\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -301,7 +306,8 @@
     <Compile Include="Areas\DataProcessing\DataProcessingAreaRegistration.cs" />
     <Compile Include="Areas\Operation\AccessibiliteController.cs" />
     <Compile Include="Areas\Operation\EvalReponsesController.cs" />
-    <Compile Include="Areas\Operation\MoyenAccesController.cs" />
+    <Compile Include="Areas\Operation\NiveauResolutionController.cs" />
+    <Compile Include="Areas\Operation\Views\Reponses\MoyenAccesController.cs" />
     <Compile Include="Areas\Operation\NiveauAccesController.cs" />
     <Compile Include="Areas\Operation\OperationAreaRegistration.cs" />
     <Compile Include="Areas\Operation\ReponsesController.cs" />
