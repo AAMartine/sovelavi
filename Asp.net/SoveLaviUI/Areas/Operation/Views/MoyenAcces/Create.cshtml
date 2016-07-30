@@ -1,0 +1,40 @@
+﻿@model BOL.tbl_MOYEN_ACCES
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Ajouter Moyen Accès</h3>
+                </div>
+                <div class="box-body">
+                    @using (Html.BeginForm("Create", "MoyenAcces", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "Champ Requis", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.moyen, "Moyen", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.moyen, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.moyen, "Champ requis", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <input type="submit" value="Ajouter" class="btn btn-primary" />
+                            </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>

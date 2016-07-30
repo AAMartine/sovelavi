@@ -51,166 +51,166 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LayerValidation.cs" />
+    <Compile Include="SoveLaviModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoveLaviModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SoveLaviModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SoveLaviModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoveLaviModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="tbl_ALERTE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_CARACTERISTIQUE_MENACE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_COLLECTIVITE_TERRITORIALE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_COMMUNE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_CONTACT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_COU.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_COU_ACTIVATION_HISTORY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_DEPARTEMENT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_DONNEE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_EVENEMENT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_EVENEMENT_COLLECTIVITE_TERRITORIALE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_EVENEMENT_TYPE_DEGAT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_FIABILITE_SOURCE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_INSTITUTION.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_LAYER.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_LAYER_CATEGORY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_LAYER_TYPE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_MEMBRE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_MENACE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_MENACE_INTENSITE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_NIVEAU.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_NIVEAU_ALERTE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_PERIODE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_PHOTO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_POI.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_POI_MENACE_VULNERABILITE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_POI_TYPE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_PRIORITE_DONNEE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_PRIORITE_EVENEMENT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_REPONSE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_RESSOURCE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_RESSOURCES_AFFECTEES.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_RESSOURCE_TYPE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_ROLE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_SECTION_COMMUNALE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_SEXE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TAG.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TYPE_DEGAT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TYPE_EVENEMENT.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TYPE_INSTITUTION.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TYPE_MENACE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_TYPE_REPONSE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_UNITE_REFERENCE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_USER.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_USER_ROLE_COU.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_VULNERABILITE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_VULNERABILITE_HISTORIQUE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_VULNERABILITE_NIVEAU.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>SoveLaviModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_Models\Login.cs" />
     <Compile Include="View_Models\Register.cs" />
@@ -219,14 +219,14 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="SoveLaviModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SoveLaviModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SoveLaviModel.edmx.diagram">
+      <DependentUpon>SoveLaviModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -235,15 +235,15 @@
     <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <Content Include="SoveLaviModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>SoveLaviModel.edmx</DependentUpon>
+      <LastGenOutput>SoveLaviModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="SoveLaviModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>SoveLaviModel.edmx</DependentUpon>
+      <LastGenOutput>SoveLaviModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
