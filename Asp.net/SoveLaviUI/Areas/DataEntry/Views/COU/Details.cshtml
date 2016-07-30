@@ -1,0 +1,99 @@
+﻿@model BOL.tbl_COU
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_COU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastCloseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastCloseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activationMotif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activationMotif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastActiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastActiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_COLLECTIVITE_TERRITORIALE.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_USER.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_USER.nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_USER1.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_USER1.nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

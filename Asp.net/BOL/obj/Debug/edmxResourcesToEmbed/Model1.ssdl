@@ -25,7 +25,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="niveauId" Type="int" Nullable="false" />
     <Property Name="deptId" Type="int" />
     <Property Name="communeId" Type="int" />
@@ -58,7 +58,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="latitude" Type="float" Nullable="false" />
@@ -74,7 +74,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="activationStartDate" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="activationEndDate" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="couId" Type="int" Nullable="false" />
@@ -153,7 +153,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="type" Type="int" Nullable="false" />
     <Property Name="contactId" Type="int" Nullable="false" />
@@ -191,7 +191,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="institutionId" Type="int" Nullable="false" />
     <Property Name="couId" Type="int" Nullable="false" />
     <Property Name="contactId" Type="int" Nullable="false" />
@@ -218,7 +218,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_NIVEAU_ALERTE">
@@ -311,7 +311,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="typeRessourceId" Type="int" Nullable="false" />
     <Property Name="qteDisponible" Type="int" Nullable="false" />
@@ -322,14 +322,14 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_RESSOURCES_AFFECTEES">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="qteAffectee" Type="int" Nullable="false" />
     <Property Name="reponseId" Type="int" Nullable="false" />
     <Property Name="sourceId" Type="int" Nullable="false" />
@@ -392,7 +392,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_TYPE_MENACE">
@@ -434,7 +434,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="userId" Type="int" Nullable="false" />
     <Property Name="couId" Type="int" Nullable="false" />
     <Property Name="roleId" Type="int" Nullable="false" />
@@ -443,7 +443,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="collectiviteId" Type="int" Nullable="false" />
     <Property Name="menaceId" Type="int" Nullable="false" />
     <Property Name="niveauVulnerabiliteID" Type="int" Nullable="false" />
@@ -453,7 +453,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="communeId" Type="int" Nullable="false" />
     <Property Name="menaceId" Type="int" Nullable="false" />
     <Property Name="niveauVulnerabiliteId" Type="int" Nullable="false" />
@@ -464,7 +464,7 @@ warning 6002: The table/view 'SOVELAVIDB.dbo.tbl_POI_MENACE_VULNERABILITE' does 
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="100" />
   </EntityType>
