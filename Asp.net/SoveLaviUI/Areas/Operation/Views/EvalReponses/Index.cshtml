@@ -5,42 +5,70 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<script src="~/scripts/jquery-1.10.2.js"></script>
+<script src="~/scripts/jquery.validate.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste Evaluation Réponses</h3>
+                    @if (TempData["Msg"] != null)
+                    {<div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4>
+                            @TempData["Msg"].ToString()
+                        </h4>
+                    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.commentaires)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_NIVEAU_RESOLUTION.nomNiveau)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_REPONSE.description)
-        </th>
-        <th></th>
-    </tr>
+                    }
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <p>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.commentaires)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_NIVEAU_RESOLUTION.nomNiveau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_REPONSE.description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
-
-</table>
+                    <p>
+                        @Html.ActionLink("Ajouter Nouvelle évaluation", "Create")
+                    </p>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.commentaires)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tbl_NIVEAU_RESOLUTION.nomNiveau)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tbl_REPONSE.description)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.commentaires)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tbl_NIVEAU_RESOLUTION.nomNiveau)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tbl_REPONSE.description)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                        </td>
+                                    </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

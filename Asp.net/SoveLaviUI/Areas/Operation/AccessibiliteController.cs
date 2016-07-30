@@ -53,11 +53,18 @@ namespace SoveLaviUI.Areas.Operation
         public ActionResult Create([Bind(Include = "id,niveauId,moyenId,collectiviteId,StartDate")] tbl_ACCESSIBILITE tbl_ACCESSIBILITE)
         {
             if (ModelState.IsValid)
-            {
-                db.tbl_ACCESSIBILITE.Add(tbl_ACCESSIBILITE);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+               try 
+                   {
+                    db.tbl_ACCESSIBILITE.Add(tbl_ACCESSIBILITE);
+                    db.SaveChanges();
+                    TempData["Msg"] = "Accessibilité mise à jour";
+                    return RedirectToAction("Index");
+                    }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Mise à jour echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
 
             ViewBag.collectiviteId = new SelectList(db.tbl_COLLECTIVITE_TERRITORIALE, "id", "id", tbl_ACCESSIBILITE.collectiviteId);
             ViewBag.moyenId = new SelectList(db.tbl_MOYEN_ACCES, "id", "moyen", tbl_ACCESSIBILITE.moyenId);
@@ -91,11 +98,19 @@ namespace SoveLaviUI.Areas.Operation
         public ActionResult Edit([Bind(Include = "id,niveauId,moyenId,collectiviteId,StartDate")] tbl_ACCESSIBILITE tbl_ACCESSIBILITE)
         {
             if (ModelState.IsValid)
-            {
-                db.Entry(tbl_ACCESSIBILITE).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                try
+                    {
+                     db.Entry(tbl_ACCESSIBILITE).State = EntityState.Modified;
+                     db.SaveChanges();
+                    TempData["Msg"] = "Accessibilité mise à jour";
+                    return RedirectToAction("Index");
+                     }
+                catch (Exception e1)
+                {
+                    TempData["Msg"] = "Mise à jour echouée: " + e1.Message;
+                    return RedirectToAction("Index");
+                }
+
             ViewBag.collectiviteId = new SelectList(db.tbl_COLLECTIVITE_TERRITORIALE, "id", "id", tbl_ACCESSIBILITE.collectiviteId);
             ViewBag.moyenId = new SelectList(db.tbl_MOYEN_ACCES, "id", "moyen", tbl_ACCESSIBILITE.moyenId);
             ViewBag.niveauId = new SelectList(db.tbl_NIVEAU_ACCES, "id", "nom", tbl_ACCESSIBILITE.niveauId);
@@ -123,12 +138,21 @@ namespace SoveLaviUI.Areas.Operation
         public ActionResult DeleteConfirmed(int id)
         {
             tbl_ACCESSIBILITE tbl_ACCESSIBILITE = db.tbl_ACCESSIBILITE.Find(id);
-            db.tbl_ACCESSIBILITE.Remove(tbl_ACCESSIBILITE);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                db.tbl_ACCESSIBILITE.Remove(tbl_ACCESSIBILITE);
+                db.SaveChanges();
+                TempData["Msg"] = "Suppression réussie";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e1)
+            {
+                TempData["Msg"] = "Suppression echouée: " + e1.Message;
+                return RedirectToAction("Index");
+            }
         }
 
-        protected override void Dispose(bool disposing)
+protected override void Dispose(bool disposing)
         {
             if (disposing)
             {

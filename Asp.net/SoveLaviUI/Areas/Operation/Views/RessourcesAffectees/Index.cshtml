@@ -5,48 +5,74 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<script src="~/scripts/jquery-1.10.2.js"></script>
+<script src="~/scripts/jquery.validate.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste Ressources affectées</h3>
+                    @if (TempData["Msg"] != null)
+                    {<div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4>
+                            @TempData["Msg"].ToString()
+                        </h4>
+                    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.qteAffectee)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_EVENEMENT_TYPE_DEGAT.id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_REPONSE.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_RESSOURCE.nom)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.qteAffectee)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_EVENEMENT_TYPE_DEGAT.id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_REPONSE.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbl_RESSOURCE.nom)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
-
-</table>
+                    }
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <p>
+                        @Html.ActionLink("Ajouter Ressources à Réponses", "Create")
+                    </p>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.qteAffectee)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tbl_EVENEMENT_TYPE_DEGAT.id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tbl_REPONSE.description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tbl_RESSOURCE.nom)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.qteAffectee)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tbl_EVENEMENT_TYPE_DEGAT.id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tbl_REPONSE.description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tbl_RESSOURCE.nom)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                        </td>
+                                    </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
