@@ -76,7 +76,7 @@ namespace SoveLaviUI.Areas.Administrator.Controllers
                     }
                     catch (Exception e1)
                     {
-
+                        TempData["Msg"]=e1.Message;
                     }
                     tbl_LAYER.fileName = newLayerName;
                     tbl_LAYER.dateAdded = DateTime.Now;

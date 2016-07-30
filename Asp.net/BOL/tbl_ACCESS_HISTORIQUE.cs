@@ -12,17 +12,13 @@ namespace BOL
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_VULNERABILITE_HISTORIQUE
+    public partial class tbl_ACCESS_HISTORIQUE
     {
         public int id { get; set; }
-        public int communeId { get; set; }
-        public int menaceId { get; set; }
-        public int niveauVulnerabiliteId { get; set; }
+        public int accessID { get; set; }
         public System.DateTime startDate { get; set; }
         public System.DateTime endDate { get; set; }
     
-        public virtual tbl_COMMUNE tbl_COMMUNE { get; set; }
-        public virtual tbl_MENACE tbl_MENACE { get; set; }
-        public virtual tbl_VULNERABILITE_NIVEAU tbl_VULNERABILITE_NIVEAU { get; set; }
+        public virtual tbl_ACCESSIBILITE tbl_ACCESSIBILITE { get; set; }
     }
 }

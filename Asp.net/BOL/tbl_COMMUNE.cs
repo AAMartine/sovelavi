@@ -19,6 +19,7 @@ namespace BOL
         {
             this.tbl_COLLECTIVITE_TERRITORIALE = new HashSet<tbl_COLLECTIVITE_TERRITORIALE>();
             this.tbl_SECTION_COMMUNALE = new HashSet<tbl_SECTION_COMMUNALE>();
+            this.tbl_VULNERABILITE_HISTORIQUE = new HashSet<tbl_VULNERABILITE_HISTORIQUE>();
         }
     
         public int id { get; set; }
@@ -30,5 +31,7 @@ namespace BOL
         public virtual tbl_DEPARTEMENT tbl_DEPARTEMENT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_SECTION_COMMUNALE> tbl_SECTION_COMMUNALE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_VULNERABILITE_HISTORIQUE> tbl_VULNERABILITE_HISTORIQUE { get; set; }
     }
 }

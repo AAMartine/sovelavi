@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,7 +24,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -225,31 +223,50 @@
     <Content Include="Areas\Administrator\Views\Pois\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\Pois\Index.cshtml" />
     <Content Include="Areas\Security\Views\Login\Index.cshtml" />
-    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Create.cshtml" />
-    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Delete.cshtml" />
-    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Details.cshtml" />
-    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Edit.cshtml" />
-    <Content Include="Areas\DataEntry\Views\VULNERABILITE\Index.cshtml" />
-    <Content Include="Areas\DataEntry\Views\RESSOURCE\Create.cshtml" />
-    <Content Include="Areas\DataEntry\Views\RESSOURCE\Delete.cshtml" />
-    <Content Include="Areas\DataEntry\Views\RESSOURCE\Details.cshtml" />
-    <Content Include="Areas\DataEntry\Views\RESSOURCE\Edit.cshtml" />
-    <Content Include="Areas\DataEntry\Views\RESSOURCE\Index.cshtml" />
-    <Content Include="Areas\DataEntry\Views\COU\Create.cshtml" />
-    <Content Include="Areas\DataEntry\Views\COU\Delete.cshtml" />
-    <Content Include="Areas\DataEntry\Views\COU\Details.cshtml" />
-    <Content Include="Areas\DataEntry\Views\COU\Edit.cshtml" />
-    <Content Include="Areas\DataEntry\Views\COU\Index.cshtml" />
-    <Content Include="Areas\DataEntry\Views\INSTITUTION\Create.cshtml" />
-    <Content Include="Areas\DataEntry\Views\INSTITUTION\Delete.cshtml" />
-    <Content Include="Areas\DataEntry\Views\INSTITUTION\Details.cshtml" />
-    <Content Include="Areas\DataEntry\Views\INSTITUTION\Edit.cshtml" />
-    <Content Include="Areas\DataEntry\Views\INSTITUTION\Index.cshtml" />
-    <Content Include="Areas\DataEntry\Views\MEMBRE\Create.cshtml" />
-    <Content Include="Areas\DataEntry\Views\MEMBRE\Delete.cshtml" />
-    <Content Include="Areas\DataEntry\Views\MEMBRE\Details.cshtml" />
-    <Content Include="Areas\DataEntry\Views\MEMBRE\Edit.cshtml" />
-    <Content Include="Areas\DataEntry\Views\MEMBRE\Index.cshtml" />
+    <Content Include="Areas\DataProcessing\Views\web.config" />
+    <Content Include="Areas\Operation\Views\web.config" />
+    <Content Include="Areas\AlertManagement\Views\web.config" />
+    <Content Include="Areas\PublicInfo\Views\web.config" />
+    <Content Include="Areas\Operation\Views\Reponses\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\Reponses\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\Reponses\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\Reponses\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\Reponses\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\TypeReponse\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\TypeReponse\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\TypeReponse\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\TypeReponse\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\TypeReponse\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\RessourcesAffectees\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\RessourcesAffectees\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\RessourcesAffectees\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\RessourcesAffectees\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\RessourcesAffectees\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\EvalReponses\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\EvalReponses\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\EvalReponses\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\EvalReponses\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\EvalReponses\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\MoyenAcces\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\MoyenAcces\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\MoyenAcces\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\MoyenAcces\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\MoyenAcces\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\Accessibilite\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\Accessibilite\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\Accessibilite\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\Accessibilite\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\Accessibilite\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauAcces\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauAcces\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauAcces\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauAcces\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauAcces\Index.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Create.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Delete.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Details.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Edit.cshtml" />
+    <Content Include="Areas\Operation\Views\NiveauResolution\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -265,10 +282,7 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="scripts\ScriptSOVELAVI.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -278,21 +292,28 @@
     <Compile Include="Areas\Administrator\Controllers\LayersTypesController.cs" />
     <Compile Include="Areas\Administrator\Controllers\MapController.cs" />
     <Compile Include="Areas\Administrator\Controllers\PoisController.cs" />
+    <Compile Include="Areas\AlertManagement\AlertManagementAreaRegistration.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
-    <Compile Include="Areas\DataEntry\Controllers\COUController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\EvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\FiabiliteSourceController.cs" />
-    <Compile Include="Areas\DataEntry\Controllers\INSTITUTIONController.cs" />
-    <Compile Include="Areas\DataEntry\Controllers\MEMBREController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\MenacesController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\PrioriteEvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\QuickNoteEventsController.cs" />
-    <Compile Include="Areas\DataEntry\Controllers\RESSOURCEController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\TypeEvenementsController.cs" />
     <Compile Include="Areas\DataEntry\Controllers\TypeMenacesController.cs" />
-    <Compile Include="Areas\DataEntry\Controllers\VULNERABILITEController.cs" />
     <Compile Include="Areas\DataEntry\DataEntryAreaRegistration.cs" />
+    <Compile Include="Areas\DataProcessing\DataProcessingAreaRegistration.cs" />
+    <Compile Include="Areas\Operation\AccessibiliteController.cs" />
+    <Compile Include="Areas\Operation\EvalReponsesController.cs" />
+    <Compile Include="Areas\Operation\NiveauResolutionController.cs" />
+    <Compile Include="Areas\Operation\Views\Reponses\MoyenAccesController.cs" />
+    <Compile Include="Areas\Operation\NiveauAccesController.cs" />
+    <Compile Include="Areas\Operation\OperationAreaRegistration.cs" />
+    <Compile Include="Areas\Operation\ReponsesController.cs" />
+    <Compile Include="Areas\Operation\RessourcesAffecteesController.cs" />
+    <Compile Include="Areas\Operation\TypeReponseController.cs" />
+    <Compile Include="Areas\PublicInfo\PublicInfoAreaRegistration.cs" />
     <Compile Include="Areas\Security\Controllers\BaseSecurityController.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
     <Compile Include="Areas\Security\Controllers\RegisterController.cs" />
@@ -327,10 +348,22 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Models\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
+    <Folder Include="Areas\AlertManagement\Controllers\" />
+    <Folder Include="Areas\AlertManagement\Models\" />
+    <Folder Include="Areas\AlertManagement\Views\Shared\" />
     <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Areas\DataEntry\Models\" />
     <Folder Include="Areas\DataEntry\Views\Shared\" />
+    <Folder Include="Areas\DataProcessing\Controllers\" />
+    <Folder Include="Areas\DataProcessing\Models\" />
+    <Folder Include="Areas\DataProcessing\Views\Shared\" />
+    <Folder Include="Areas\Operation\Controllers\" />
+    <Folder Include="Areas\Operation\Models\" />
+    <Folder Include="Areas\Operation\Views\Shared\" />
+    <Folder Include="Areas\PublicInfo\Controllers\" />
+    <Folder Include="Areas\PublicInfo\Models\" />
+    <Folder Include="Areas\PublicInfo\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\BaseSecurity\" />
     <Folder Include="Areas\Security\Views\Register\" />
@@ -350,15 +383,11 @@
       <Name>BOL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

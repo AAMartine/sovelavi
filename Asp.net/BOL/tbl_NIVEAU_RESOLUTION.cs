@@ -12,31 +12,20 @@ namespace BOL
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class tbl_REPONSE
+    public partial class tbl_NIVEAU_RESOLUTION
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_REPONSE()
+        public tbl_NIVEAU_RESOLUTION()
         {
             this.tbl_EVAL_REPONSE = new HashSet<tbl_EVAL_REPONSE>();
-            this.tbl_RESSOURCES_AFFECTEES = new HashSet<tbl_RESSOURCES_AFFECTEES>();
         }
     
         public int id { get; set; }
         [Required]
-        public int typeId { get; set; }
-        [Required]
-        public System.DateTime heureDecision { get; set; }
-        [Required]
-        public Nullable<System.DateTime> heureImpactEffectif { get; set; }
-        [Required]
-        public System.DateTime heureImpactEspere { get; set; }
+        public string nomNiveau { get; set; }
         [Required]
         public string description { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EVAL_REPONSE> tbl_EVAL_REPONSE { get; set; }
-        public virtual tbl_TYPE_REPONSE tbl_TYPE_REPONSE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_RESSOURCES_AFFECTEES> tbl_RESSOURCES_AFFECTEES { get; set; }
     }
 }

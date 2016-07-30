@@ -12,31 +12,28 @@ namespace BOL
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class tbl_REPONSE
+    public partial class tbl_ACCESSIBILITE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_REPONSE()
+        public tbl_ACCESSIBILITE()
         {
-            this.tbl_EVAL_REPONSE = new HashSet<tbl_EVAL_REPONSE>();
-            this.tbl_RESSOURCES_AFFECTEES = new HashSet<tbl_RESSOURCES_AFFECTEES>();
+            this.tbl_ACCESS_HISTORIQUE = new HashSet<tbl_ACCESS_HISTORIQUE>();
         }
     
         public int id { get; set; }
         [Required]
-        public int typeId { get; set; }
+        public int niveauId { get; set; }
         [Required]
-        public System.DateTime heureDecision { get; set; }
+        public int moyenId { get; set; }
         [Required]
-        public Nullable<System.DateTime> heureImpactEffectif { get; set; }
+        public int collectiviteId { get; set; }
         [Required]
-        public System.DateTime heureImpactEspere { get; set; }
-        [Required]
-        public string description { get; set; }
+        public System.DateTime StartDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_EVAL_REPONSE> tbl_EVAL_REPONSE { get; set; }
-        public virtual tbl_TYPE_REPONSE tbl_TYPE_REPONSE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_RESSOURCES_AFFECTEES> tbl_RESSOURCES_AFFECTEES { get; set; }
+        public virtual ICollection<tbl_ACCESS_HISTORIQUE> tbl_ACCESS_HISTORIQUE { get; set; }
+        public virtual tbl_COLLECTIVITE_TERRITORIALE tbl_COLLECTIVITE_TERRITORIALE { get; set; }
+        public virtual tbl_MOYEN_ACCES tbl_MOYEN_ACCES { get; set; }
+        public virtual tbl_NIVEAU_ACCES tbl_NIVEAU_ACCES { get; set; }
     }
 }

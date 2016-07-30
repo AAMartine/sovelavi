@@ -131,9 +131,37 @@
                         </a>
                         <ul class="treeview-menu">                            
                             <li><a href=@Url.Action("Index","Layers",new{area="Administrator"})><i class="fa fa-circle-o"></i>Tous</a></li>
-                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator", type = "Administrateur" })><i class="fa fa-circle-o"></i>Ajouter</a></li>
+                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator"})><i class="fa fa-circle-o"></i>Ajouter</a></li>
                             
                         </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>OPERATIONS</span> 
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href=@Url.Action("Index","Reponses",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Réponses</a></li>
+                            <li><a href=@Url.Action("Create", "Reponses", new { area = "Operation"})><i class="fa fa-circle-o"></i>Définir Réponses</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> CONFIGURATION <i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a href=@Url.Action("Create","MoyenAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Ajouter Moyen Accès</a></li>
+                                    <li><a href=@Url.Action("Create","NiveauAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Ajouter Niveau Accès</a></li>
+                                    <li><a href=@Url.Action("Create","NiveauResolution",new { area ="Operation"})><i class="fa fa-circle-o"></i>Ajouter Niveau Résolution</a></li>
+                                    <li><a href=@Url.Action("Create","TypeReponse",new { area ="Operation"})><i class="fa fa-circle-o"></i>Ajouter Type Réponse</a></li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i> Lister paramètres <i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href=@Url.Action("Index","MoyenAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Moyen Accès</a></li>
+                                            <li><a href=@Url.Action("Index", "NiveauAcces",new{area="Operation"})><i class="fa fa-circle-o"></i>Lister Niveau Accès</a></li>
+                                            <li><a href=@Url.Action("Index","NiveauResolution",new { area ="Operation"})><i class="fa fa-circle-o"></i>Lister Niveau Résolution</a></li>
+                                            <li><a href=@Url.Action("Index", "TypeReponse",new { area ="Operation"})><i class="fa fa-circle-o"></i>Lister Type Réponse</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                              </li>
+                            </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
@@ -141,7 +169,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href=@Url.Action("Index","Map",new{area="Administrator"})><i class="fa fa-circle-o"></i>Carte</a></li>
-                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator", type = "Administrateur" })><i class="fa fa-circle-o"></i>Ajouter</a></li>
+                            <li><a href=@Url.Action("Create", "Layers", new { area = "Administrator"})><i class="fa fa-circle-o"></i>Ajouter</a></li>
 
                         </ul>
                     </li>
@@ -160,16 +188,18 @@
 
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-users"></i>
-                            <span>Gestion Municipalite</span>
+                            <i class="fa fa-files-o"></i>
+                            <span>Profil Commune</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href=@Url.Action("Index", "RESSOURCE", new { area = "DataEntry" })><i class="fa fa-circle-o"></i> Ressource</a></li>
-                            <li><a href=@Url.Action("Index", "VULNERABILITE", new { area = "DataEntry" })><i class="fa fa-circle-o"></i> Vulnerabilte</a></li>
-                            <li><a href=@Url.Action("Index", "COU", new { area = "DataEntry" })><i class="fa fa-circle-o"></i> COU</a></li>
-                            <li><a href=@Url.Action("Index", "MEMBRE", new { area = "DataEntry" })><i class="fa fa-circle-o"></i> Membre</a></li>
-                            <li><a href=@Url.Action("Index", "INSTITUTION", new { area = "DataEntry" })><i class="fa fa-circle-o"></i> Institution</a></li>
+                            @if (User.IsInRole("Administrateur"))
+                            {
+                                <li><a href=@Url.Action("FormulaireCreationView", "Formulaires", new { area = "Administrator" })><i class="fa fa-circle-o"></i> Génération des formulaires</a></li>
+                            }
+                            <li><a href=@Url.Action("Index", "Formulaires", new { area = "Administrator" })><i class="fa fa-circle-o"></i> Lister les formulaires</a></li>
+                            <li><a href=@Url.Action("Index", "FormulairesDujour", new { area = "Administrator" })><i class="fa fa-circle-o"></i> Formulaires du jour</a></li>
+
                         </ul>
                     </li>
 

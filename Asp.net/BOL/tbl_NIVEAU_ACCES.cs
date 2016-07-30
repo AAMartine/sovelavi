@@ -11,26 +11,20 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class tbl_EVENEMENT_TYPE_DEGAT
+    using System.ComponentModel.DataAnnotations;
+    public partial class tbl_NIVEAU_ACCES
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_EVENEMENT_TYPE_DEGAT()
+        public tbl_NIVEAU_ACCES()
         {
-            this.tbl_RESSOURCES_AFFECTEES = new HashSet<tbl_RESSOURCES_AFFECTEES>();
+            this.tbl_ACCESSIBILITE = new HashSet<tbl_ACCESSIBILITE>();
         }
     
         public int id { get; set; }
-        public int typeDegatId { get; set; }
-        public int evenementId { get; set; }
-        public int valeur { get; set; }
-        public Nullable<int> nbreFamilleAffectee { get; set; }
-        public int collectiviteId { get; set; }
+        [Required]
+        public string nom { get; set; }
     
-        public virtual tbl_COLLECTIVITE_TERRITORIALE tbl_COLLECTIVITE_TERRITORIALE { get; set; }
-        public virtual tbl_EVENEMENT tbl_EVENEMENT { get; set; }
-        public virtual tbl_TYPE_DEGAT tbl_TYPE_DEGAT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_RESSOURCES_AFFECTEES> tbl_RESSOURCES_AFFECTEES { get; set; }
+        public virtual ICollection<tbl_ACCESSIBILITE> tbl_ACCESSIBILITE { get; set; }
     }
 }

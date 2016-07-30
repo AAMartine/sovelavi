@@ -11,18 +11,18 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class tbl_VULNERABILITE_HISTORIQUE
+    using System.ComponentModel.DataAnnotations;
+    public partial class tbl_EVAL_REPONSE
     {
         public int id { get; set; }
-        public int communeId { get; set; }
-        public int menaceId { get; set; }
-        public int niveauVulnerabiliteId { get; set; }
-        public System.DateTime startDate { get; set; }
-        public System.DateTime endDate { get; set; }
+        [Required]
+        public int reponseId { get; set; }
+        [Required]
+        public int niveauId { get; set; }
+        [Required]
+        public string commentaires { get; set; }
     
-        public virtual tbl_COMMUNE tbl_COMMUNE { get; set; }
-        public virtual tbl_MENACE tbl_MENACE { get; set; }
-        public virtual tbl_VULNERABILITE_NIVEAU tbl_VULNERABILITE_NIVEAU { get; set; }
+        public virtual tbl_NIVEAU_RESOLUTION tbl_NIVEAU_RESOLUTION { get; set; }
+        public virtual tbl_REPONSE tbl_REPONSE { get; set; }
     }
 }
